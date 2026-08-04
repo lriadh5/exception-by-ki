@@ -1,0 +1,81 @@
+import { SITE_URL } from "@/lib/env";
+import type { Collection, Product } from "@/lib/shopify/types";
+
+const BRAND_NAME = "Exception by K&I";
+
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: BRAND_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/icon.svg`,
+  };
+}
+
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: BRAND_NAME,
+    url: SITE_URL,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
+export type BreadcrumbItem = { name: string; path: string };
+
+export function breadcrumbSchema(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.path}`,
+    })),
+  };
+}
+
+export function productSchema(product: Product) {
+  const prices = product.variants.map((v) => v.price.amount);
+  const inStock = product.variants.some((v) => v.available && v.quantityAvailable > 0);
+  const currency = product.variants[0]?.price.currencyCode ?? "USD";
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.title,
+    description: product.description,
+    ...(product.material ? { material: product.material } : {}),
+    ...(product.images[0]?.url ? { image: product.images.map((i) => i.url).filter(Boolean) } : {}),
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: currency,
+      lowPrice: Math.min(...prices),
+      highPrice: Math.max(...prices),
+      offerCount: product.variants.length,
+      availability: inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      url: `${SITE_URL}/products/${product.handle}`,
+    },
+  };
+}
+
+export function collectionPageSchema(collection: Collection, productCount: number) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: collection.title,
+    description: collection.description,
+    url: `${SITE_URL}/collections/${collection.handle}`,
+    numberOfItems: productCount,
+  };
+}
