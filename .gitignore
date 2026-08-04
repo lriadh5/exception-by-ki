@@ -41,6 +41,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# netlify CLI deploy artifacts (created transiently by `netlify deploy` / @netlify/mcp)
+/deploy-*.zip
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
