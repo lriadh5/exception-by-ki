@@ -1,10 +1,9 @@
 /**
- * Architecture placeholder — no reviews are collected or displayed yet.
- * Faking review data or counts would be actively misleading, so this
- * stays types-only until a real reviews provider (Judge.me, Yotpo, or a
- * custom backend) is connected. When it is: populate Product.reviewSummary
- * in lib/shopify/map.ts (or mock-data.ts), and render <ReviewsSection>
- * (not yet built) on the product page using it.
+ * No real reviews provider (Judge.me, Yotpo, or a custom backend) is
+ * connected yet — see README "Prepared, not built". The UI
+ * (components/commerce/ReviewsSection.tsx) renders against sample data
+ * (lib/reviews/mock-data.ts) via the lib/reviews/client.ts adapter, so
+ * the real integration is a client.ts swap, not a UI rewrite.
  */
 export type Review = {
   id: string;

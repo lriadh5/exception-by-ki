@@ -8,6 +8,8 @@ export type CartState = {
   error: string | null;
   /** Latest change, for the aria-live region. Not persisted. */
   announcement: string;
+  /** True once the initial localStorage read (HYDRATE) has been applied — gates persisting back to storage, see cart-context.tsx. */
+  hydrated: boolean;
 };
 
 export const initialCartState: CartState = {
@@ -16,6 +18,7 @@ export const initialCartState: CartState = {
   isLoading: false,
   error: null,
   announcement: "",
+  hydrated: false,
 };
 
 export type NewCartLine = Omit<CartLine, "lineId" | "quantity">;
@@ -33,7 +36,7 @@ export type CartAction =
 export function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
     case "HYDRATE":
-      return { ...state, lines: action.lines };
+      return { ...state, lines: action.lines, hydrated: true };
 
     case "ADD_LINE": {
       const { line, requestedQuantity } = action;

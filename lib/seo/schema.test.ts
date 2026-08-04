@@ -47,6 +47,20 @@ describe("productSchema", () => {
     };
     expect(productSchema(soldOut).offers.availability).toBe("https://schema.org/OutOfStock");
   });
+
+  it("omits aggregateRating when there are no reviews", () => {
+    const schema = productSchema(dutchOven, { average: 0, count: 0 });
+    expect(schema).not.toHaveProperty("aggregateRating");
+  });
+
+  it("includes aggregateRating when there are reviews", () => {
+    const schema = productSchema(dutchOven, { average: 4.5, count: 3 });
+    expect(schema.aggregateRating).toEqual({
+      "@type": "AggregateRating",
+      ratingValue: 4.5,
+      reviewCount: 3,
+    });
+  });
 });
 
 describe("collectionPageSchema", () => {

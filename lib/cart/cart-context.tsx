@@ -45,26 +45,34 @@ export function CartProvider({
   isPreviewMode: boolean;
 }) {
   const [state, dispatch] = useReducer(cartReducer, initialCartState);
-  const hydrated = useRef(false);
   const triggerRef = useRef<HTMLElement | null>(null);
 
+  // `state.hydrated` (reducer state, not a ref) on purpose: the persist
+  // effect below only reads it via its own render's closure, so it can
+  // only ever run once the render that reflects the HYDRATE dispatch has
+  // committed. A ref flipped synchronously inside this effect raced the
+  // persist effect on mount (both fire in the same pass) and could write
+  // the pre-hydrate empty cart back over real data — most visibly under
+  // React Strict Mode's double effect invocation in development, but the
+  // underlying race isn't dev-only.
   useEffect(() => {
     const raw = window.localStorage.getItem(STORAGE_KEY);
+    let lines: CartLine[] = [];
     if (raw) {
       try {
-        dispatch({ type: "HYDRATE", lines: JSON.parse(raw) });
+        lines = JSON.parse(raw);
       } catch {
         // ignore malformed cart in storage
       }
     }
-    hydrated.current = true;
+    dispatch({ type: "HYDRATE", lines });
   }, []);
 
   useEffect(() => {
-    if (hydrated.current) {
+    if (state.hydrated) {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state.lines));
     }
-  }, [state.lines]);
+  }, [state.lines, state.hydrated]);
 
   const addLine = useCallback(async (line: NewCartLine, quantity: number) => {
     dispatch({ type: "SET_LOADING", isLoading: true });
