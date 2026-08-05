@@ -107,8 +107,10 @@ load with the real cart persisted across navigation).
 
 ## Deployment
 
-Any Next.js host works (Vercel is the reference target; the app has no
-Vercel-specific code). Required at deploy time:
+Netlify is the reference target (`netlify.toml` — `npm run build`,
+published from `.next/` via Netlify's auto-installed Next.js Runtime).
+Any other Next.js host works too; the app has no Netlify- or
+Vercel-specific code beyond that config file. Required at deploy time:
 
 1. Set `NEXT_PUBLIC_SITE_URL` to the real production origin — the build
    fails without it.
@@ -122,6 +124,23 @@ Suggested CI gate before merge/deploy: `npm ci && npm run lint && npm run
 build && npm test`. Add `npm run test:e2e` too once CI has a way to run a
 headless browser (see `playwright.config.ts` — it starts its own dev
 server).
+
+### Continuous deployment (Netlify)
+
+The project's Netlify site (`exception-by-ki-phase2`) is not yet linked to
+this repo for automatic deploys-on-push — that link has to be made once,
+by hand, from the Netlify dashboard (it's a GitHub App OAuth authorization;
+no API/CLI path grants that without already having done it once):
+
+1. [app.netlify.com/projects/exception-by-ki-phase2](https://app.netlify.com/projects/exception-by-ki-phase2) → **Project configuration → Build & deploy → Continuous deployment → Link repository**.
+2. Choose GitHub → authorize (if not already) → select `lriadh5/exception-by-ki` → branch `main`.
+3. Build command and publish directory are read from `netlify.toml` in this repo — nothing to fill in by hand.
+4. Confirm `NEXT_PUBLIC_SITE_URL` is set under **Site configuration → Environment variables** (should already be `https://exception-by-ki-phase2.netlify.app` from setup — verify after linking, since Netlify's API didn't reliably confirm the value stuck).
+
+Once linked, every push to `main` triggers a real Netlify build from
+source — this replaces the one-off CLI upload used earlier in Phase 2
+(which failed with a persistent 403 on this account/plan and was
+abandoned in favor of this path).
 
 ### Rollback
 

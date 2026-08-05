@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# The Next.js Runtime (auto-installed by Netlify on framework detection)
+# handles the App Router build output in .next/ — server components,
+# route handlers (app/api/*), and static assets — without further config
+# here. See README "Deployment".
+
+[build.environment]
+  NODE_VERSION = "20"
