@@ -7,8 +7,10 @@ import { Breadcrumbs } from "@/components/commerce/Breadcrumbs";
 import { WishlistButton } from "@/components/commerce/WishlistButton";
 import { RecentlyViewedStrip } from "@/components/commerce/RecentlyViewedStrip";
 import { ProductCard } from "@/components/commerce/ProductCard";
+import { ReviewsSection } from "@/components/commerce/ReviewsSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, productSchema } from "@/lib/seo/schema";
+import { getReviews, getSummary } from "@/lib/reviews/client";
 
 export async function generateStaticParams() {
   const products = await listAllProducts();
@@ -44,9 +46,11 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const primaryCollectionHandle = product.collectionHandles[0];
-  const [collection, collectionProducts] = await Promise.all([
+  const [collection, collectionProducts, reviews, reviewSummary] = await Promise.all([
     primaryCollectionHandle ? getCollection(primaryCollectionHandle) : Promise.resolve(undefined),
     primaryCollectionHandle ? listProductsByCollection(primaryCollectionHandle) : Promise.resolve([]),
+    getReviews(product.handle),
+    getSummary(product.handle),
   ]);
   const recommendations = collectionProducts.filter((p) => p.handle !== product.handle).slice(0, 4);
 
@@ -54,7 +58,7 @@ export default async function ProductPage({
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-16">
-      <JsonLd data={productSchema(product)} />
+      <JsonLd data={productSchema(product, reviewSummary)} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
@@ -122,6 +126,8 @@ export default async function ProductPage({
       <RecentlyViewedStrip
         current={{ handle: product.handle, title: product.title, image: product.images[0], price: defaultPrice }}
       />
+
+      <ReviewsSection reviews={reviews} summary={reviewSummary} />
     </div>
   );
 }

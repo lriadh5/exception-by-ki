@@ -104,6 +104,21 @@ describe("cartReducer / REMOVE_LINE", () => {
   });
 });
 
+describe("cartReducer / HYDRATE", () => {
+  it("marks state as hydrated so it's safe to persist back to storage", () => {
+    expect(initialCartState.hydrated).toBe(false);
+    const state = cartReducer(initialCartState, { type: "HYDRATE", lines: [] });
+    expect(state.hydrated).toBe(true);
+  });
+
+  it("replaces lines with the hydrated data, distinct from a real ADD_LINE", () => {
+    const seeded = cartReducer(initialCartState, { type: "ADD_LINE", line: skillet, requestedQuantity: 1 });
+    const rehydrated = cartReducer(seeded, { type: "HYDRATE", lines: [] });
+    expect(rehydrated.lines).toHaveLength(0);
+    expect(rehydrated.hydrated).toBe(true);
+  });
+});
+
 describe("cartSubtotal / cartTotalQuantity", () => {
   it("sums price * quantity across lines, and total item count separately", () => {
     let state = cartReducer(initialCartState, { type: "ADD_LINE", line: skillet, requestedQuantity: 2 });

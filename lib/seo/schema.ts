@@ -1,5 +1,6 @@
 import { SITE_URL } from "@/lib/env";
 import type { Collection, Product } from "@/lib/shopify/types";
+import type { ReviewSummary } from "@/lib/reviews/types";
 
 const BRAND_NAME = "Exception by K&I";
 
@@ -45,7 +46,7 @@ export function breadcrumbSchema(items: BreadcrumbItem[]) {
   };
 }
 
-export function productSchema(product: Product) {
+export function productSchema(product: Product, reviewSummary?: ReviewSummary) {
   const prices = product.variants.map((v) => v.price.amount);
   const inStock = product.variants.some((v) => v.available && v.quantityAvailable > 0);
   const currency = product.variants[0]?.price.currencyCode ?? "USD";
@@ -57,6 +58,18 @@ export function productSchema(product: Product) {
     description: product.description,
     ...(product.material ? { material: product.material } : {}),
     ...(product.images[0]?.url ? { image: product.images.map((i) => i.url).filter(Boolean) } : {}),
+    // Only present when there are real reviews — an aggregateRating with
+    // no reviews behind it is exactly the kind of fake data this project
+    // avoids elsewhere (see README "Prepared, not built").
+    ...(reviewSummary && reviewSummary.count > 0
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: reviewSummary.average,
+            reviewCount: reviewSummary.count,
+          },
+        }
+      : {}),
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: currency,

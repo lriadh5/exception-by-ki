@@ -57,12 +57,18 @@ server logs stops firing.
 ## Prepared, not built
 
 Several features have real architecture (types, folder structure, a
-working extension point) but aren't fully built out, on purpose — building
-them further without a real backend would mean either faking data or
-faking success states, both worse than not having the feature yet:
+working extension point) but aren't fully connected to a live backend, on
+purpose — faking success states behind them would be worse than not
+having the feature yet:
 
-- **Reviews** (`lib/reviews/types.ts`) — no UI yet; needs a real reviews provider.
-- **Customer accounts** (`lib/account/types.ts`, `app/account/page.tsx`) — stub "not available" page; needs Shopify Customer Accounts or a custom auth provider.
+- **Reviews** (`lib/reviews/`) — the UI is built and live on every product
+  page (`components/commerce/ReviewsSection.tsx`, star rating + summary +
+  `aggregateRating` JSON-LD when a product has reviews), but it reads from
+  sample data (`lib/reviews/mock-data.ts`) via the same adapter-boundary
+  pattern as Shopify (`lib/reviews/client.ts`) — no real reviews provider
+  (Judge.me, Yotpo, or a custom backend) is connected yet. Swapping one in
+  is a `client.ts` change, not a UI rewrite.
+- **Customer accounts** (`lib/account/types.ts`, `app/account/page.tsx`) — an honest "not available yet" page (planned: Shopify Customer Account API once a store is connected); no fake login form.
 - **Newsletter** (`components/marketing/NewsletterForm.tsx`, `app/api/newsletter/route.ts`) — real form, but the API route always returns "not connected yet" until an ESP (e.g. Klaviyo) is wired up.
 - **Analytics** (`lib/analytics/analytics.ts`) — real event-tracking calls exist at the right call sites (e.g. add-to-cart) and respect cookie consent, but there's no provider (GA4/Meta) wired up yet — see the `TODO(analytics)` in that file.
 
@@ -87,13 +93,24 @@ and `components/checkout/CheckoutClient.test.tsx` (asserts zero `<input>`
 elements ever render on the checkout page — the regression test for the
 "don't collect PII on a fake checkout" fix).
 
-There's no E2E suite yet (Playwright would be the natural addition —
-nothing here precludes it).
+```bash
+npm run test:e2e
+```
+
+Playwright, in `e2e/`, running against `npm run dev` (preview mode, sample
+catalog — see `playwright.config.ts`). Covers the flows unit tests can't:
+homepage/search/nav, PDP variant selection through add-to-cart, the
+reviews section's populated and empty states, and checkout's PII-free
+guarantee end-to-end (`e2e/checkout.spec.ts` — the same assertion
+`CheckoutClient.test.tsx` makes in isolation, but through a full page
+load with the real cart persisted across navigation).
 
 ## Deployment
 
-Any Next.js host works (Vercel is the reference target; the app has no
-Vercel-specific code). Required at deploy time:
+Netlify is the reference target (`netlify.toml` — `npm run build`,
+published from `.next/` via Netlify's auto-installed Next.js Runtime).
+Any other Next.js host works too; the app has no Netlify- or
+Vercel-specific code beyond that config file. Required at deploy time:
 
 1. Set `NEXT_PUBLIC_SITE_URL` to the real production origin — the build
    fails without it.
@@ -104,7 +121,26 @@ Vercel-specific code). Required at deploy time:
    run `npm run lint` in CI too.
 
 Suggested CI gate before merge/deploy: `npm ci && npm run lint && npm run
-build && npm test`.
+build && npm test`. Add `npm run test:e2e` too once CI has a way to run a
+headless browser (see `playwright.config.ts` — it starts its own dev
+server).
+
+### Continuous deployment (Netlify)
+
+The project's Netlify site (`exception-by-ki-phase2`) is not yet linked to
+this repo for automatic deploys-on-push — that link has to be made once,
+by hand, from the Netlify dashboard (it's a GitHub App OAuth authorization;
+no API/CLI path grants that without already having done it once):
+
+1. [app.netlify.com/projects/exception-by-ki-phase2](https://app.netlify.com/projects/exception-by-ki-phase2) → **Project configuration → Build & deploy → Continuous deployment → Link repository**.
+2. Choose GitHub → authorize (if not already) → select `lriadh5/exception-by-ki` → branch `main`.
+3. Build command and publish directory are read from `netlify.toml` in this repo — nothing to fill in by hand.
+4. Confirm `NEXT_PUBLIC_SITE_URL` is set under **Site configuration → Environment variables** (should already be `https://exception-by-ki-phase2.netlify.app` from setup — verify after linking, since Netlify's API didn't reliably confirm the value stuck).
+
+Once linked, every push to `main` triggers a real Netlify build from
+source — this replaces the one-off CLI upload used earlier in Phase 2
+(which failed with a persistent 403 on this account/plan and was
+abandoned in favor of this path).
 
 ### Rollback
 
@@ -135,21 +171,23 @@ moves to fully dynamic rendering.
 ```
 app/                    Routes (App Router)
   collections/[handle]  PLP — sort, filter (by material), pagination
-  products/[handle]     PDP — multi-option variants, recommendations, recently viewed
+  products/[handle]     PDP — multi-option variants, recommendations, recently viewed, reviews
   checkout/              No PII collected — disabled in preview mode, real handoff when connected
   api/checkout/          Server-side Shopify cart creation (credentials never reach the client)
   api/newsletter/        Honest "not connected yet" stub
   search/, wishlist/, account/   See "Prepared, not built" above
   about/, contact/, faq/, ...    Starter legal/info pages
 components/
-  commerce/              Product cards, variant picker, breadcrumbs, pagination
+  commerce/              Product cards, variant picker, breadcrumbs, pagination, reviews section
   layout/                Header, footer, cart drawer, preview banner, cookie consent
   seo/                   JSON-LD renderer
 lib/
   shopify/               types.ts, mock-data.ts (sample data, dev-only), client.ts (adapter),
                          queries.ts + map.ts (real Storefront API), variant.ts (pure matching logic)
+  reviews/               types.ts, mock-data.ts (sample data, dev-only), client.ts (adapter), summary.ts (pure, tested)
   cart/                  reducer.ts (pure, tested) + cart-context.tsx (React wrapper)
   seo/                   schema.ts — Organization/WebSite/Product/Breadcrumb/CollectionPage JSON-LD builders
   commerce/               sort.ts, filter.ts, pagination.ts — pure, tested
   env.ts                 Required/optional env var validation — read this first
+e2e/                    Playwright smoke suite — see "Testing"
 ```
