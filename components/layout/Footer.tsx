@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { primaryNav } from "@/lib/nav";
 import { NewsletterForm } from "@/components/marketing/NewsletterForm";
 
@@ -24,9 +25,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 grid grid-cols-1 md:grid-cols-5 gap-10">
         <div className="md:col-span-2 space-y-6">
           <div>
-            <span className="block font-serif text-xl tracking-widest text-ink">
-              EXCEPTION <span className="text-brass">by K&amp;I</span>
-            </span>
+            <Image src="/logo.png" alt="Exception by K&amp;I" width={88} height={52} className="h-10 w-auto" />
             <p className="text-sm text-ink-soft max-w-sm mt-3">
               Considered cookware, kitchen accessories, and home décor for
               everyday tables and the occasions that matter.

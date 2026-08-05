@@ -3,14 +3,22 @@
 :root {
   --color-ink: #1a1613;
   --color-ink-soft: #4a433c;
-  --color-paper: #faf7f2;
+  /* Exact cream sampled from the official logo file (see public/logo.png). */
+  --color-paper: #f8f3e7;
   --color-paper-dim: #f1ebe1;
-  --color-brass: #a97f4a;
-  --color-brass-dark: #7d5c33;
-  --color-brass-light: #d8bc8e;
+  /* Exact green sampled from the official logo file — do not eyeball a
+     replacement; if the logo is ever updated, re-sample and update here. */
+  --color-brand: #0b5740;
+  --color-brand-dark: #084130;
+  --color-brand-darker: #063023;
+  --color-brand-light: #b6c7b8;
   --color-line: #e4dccb;
   --color-success: #3f6b4a;
   --color-error: #a13f3f;
+  /* Stock-urgency messaging ("Only 2 left") — kept a distinct warm amber
+     rather than brand green, so it still reads as "act now" and doesn't
+     compete with green's "in stock / go" association. */
+  --color-warning: #7d5c33;
 }
 
 @theme inline {
@@ -18,12 +26,14 @@
   --color-ink-soft: var(--color-ink-soft);
   --color-paper: var(--color-paper);
   --color-paper-dim: var(--color-paper-dim);
-  --color-brass: var(--color-brass);
-  --color-brass-dark: var(--color-brass-dark);
-  --color-brass-light: var(--color-brass-light);
+  --color-brand: var(--color-brand);
+  --color-brand-dark: var(--color-brand-dark);
+  --color-brand-darker: var(--color-brand-darker);
+  --color-brand-light: var(--color-brand-light);
   --color-line: var(--color-line);
   --color-success: var(--color-success);
   --color-error: var(--color-error);
+  --color-warning: var(--color-warning);
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
 }
@@ -43,15 +53,21 @@ h1, h2, h3, .font-serif {
 }
 
 ::selection {
-  background: var(--color-brass-light);
-  color: var(--color-ink);
+  background: var(--color-brand-light);
+  color: var(--color-brand-darker);
 }
 
 /* Visible on keyboard navigation only — mouse/touch clicks don't trigger
    :focus-visible, so this never adds a ring to a clicked button/link. */
 :focus-visible {
-  outline: 2px solid var(--color-brass-dark);
+  outline: 2px solid var(--color-brand);
   outline-offset: 2px;
+}
+
+/* Subtle depth for the hero — same exact brand green throughout, just a
+   soft diagonal gradient instead of a flat fill for a more elegant feel. */
+.hero-brand-gradient {
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-darker) 100%);
 }
 
 @keyframes fade-in-up {

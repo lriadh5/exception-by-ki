@@ -156,7 +156,7 @@ export function CartDrawer() {
                       {formatMoney(line.price)}
                     </p>
                     {line.quantityAvailable <= 5 && (
-                      <p className="text-xs text-brass-dark">
+                      <p className="text-xs text-warning">
                         Only {line.quantityAvailable} left
                       </p>
                     )}
@@ -207,7 +207,7 @@ export function CartDrawer() {
               href="/checkout"
               onClick={closeCart}
               aria-disabled={isLoading}
-              className="block w-full text-center bg-ink text-paper py-3 text-sm tracking-wide hover:bg-ink-soft transition-colors"
+              className="block w-full text-center bg-brand text-paper py-3 text-sm tracking-wide transition-all duration-300 hover:bg-brand-dark hover:shadow-md"
             >
               {isLoading ? "Updating…" : isPreviewMode ? "Checkout (preview)" : "Checkout"}
             </Link>

@@ -14,12 +14,12 @@ export default function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "#1a1613",
-          color: "#faf7f2",
+          background: "#0b5740",
+          color: "#f8f3e7",
         }}
       >
         <div style={{ fontSize: 88, letterSpacing: 12, display: "flex" }}>EXCEPTION</div>
-        <div style={{ fontSize: 28, letterSpacing: 10, color: "#d8bc8e", marginTop: 16, display: "flex" }}>
+        <div style={{ fontSize: 28, letterSpacing: 10, color: "#b6c7b8", marginTop: 16, display: "flex" }}>
           BY K&amp;I
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { primaryNav } from "@/lib/nav";
 import { useCart } from "@/lib/cart/cart-context";
@@ -23,13 +24,15 @@ export function Header() {
             ☰
           </button>
 
-          <Link href="/" className="text-center leading-none">
-            <span className="block font-serif text-2xl tracking-widest text-ink">
-              EXCEPTION
-            </span>
-            <span className="block text-[10px] tracking-[0.3em] text-brass uppercase">
-              by K&amp;I
-            </span>
+          <Link href="/" aria-label="Exception by K&amp;I — home" className="shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Exception by K&amp;I"
+              width={88}
+              height={52}
+              priority
+              className="h-11 w-auto md:h-13"
+            />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
@@ -64,7 +67,7 @@ export function Header() {
             >
               Cart
               {totalQuantity > 0 && (
-                <span className="absolute -right-3 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-brass text-[10px] text-paper">
+                <span className="absolute -right-3 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-brand text-[10px] text-paper">
                   {totalQuantity}
                 </span>
               )}

@@ -22,7 +22,7 @@ export function ProductCard({ product }: { product: Product }) {
         />
       )}
       <div className="mt-3 space-y-1">
-        <h3 className="text-sm text-ink transition-colors duration-300 group-hover:text-brass-dark">
+        <h3 className="text-sm text-ink transition-colors duration-300 group-hover:text-brand-dark">
           {product.title}
         </h3>
         {price && (

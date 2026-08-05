@@ -11,9 +11,9 @@ export default async function HomePage() {
 
   return (
     <div>
-      <section className="bg-ink text-paper">
+      <section className="hero-brand-gradient text-paper">
         <div className="mx-auto max-w-7xl px-6 py-28 md:py-36 text-center">
-          <p className="text-brass-light text-xs tracking-[0.3em] uppercase mb-4">
+          <p className="text-brand-light text-xs tracking-[0.3em] uppercase mb-4">
             Est. for the everyday table
           </p>
           <h1 className="font-serif text-4xl md:text-6xl leading-tight max-w-3xl mx-auto">
@@ -26,7 +26,7 @@ export default async function HomePage() {
           </p>
           <Link
             href="/collections/cookware"
-            className="inline-block mt-10 bg-paper text-ink px-8 py-3 text-sm tracking-wide transition-all duration-300 hover:bg-brass-light hover:shadow-lg hover:-translate-y-0.5"
+            className="inline-block mt-10 bg-paper text-ink px-8 py-3 text-sm tracking-wide transition-all duration-300 hover:bg-brand-light hover:shadow-lg hover:-translate-y-0.5"
           >
             Shop Cookware
           </Link>
@@ -44,9 +44,9 @@ export default async function HomePage() {
             <FadeIn key={collection.handle} delayMs={i * 60}>
               <Link
                 href={`/collections/${collection.handle}`}
-                className="group border border-line rounded-sm p-6 flex flex-col items-center text-center gap-2 transition-all duration-300 hover:border-brass hover:shadow-sm hover:-translate-y-0.5"
+                className="group border border-line rounded-sm p-6 flex flex-col items-center text-center gap-2 transition-all duration-300 hover:border-brand hover:shadow-sm hover:-translate-y-0.5"
               >
-                <span className="text-sm text-ink group-hover:text-brass-dark transition-colors">
+                <span className="text-sm text-ink group-hover:text-brand-dark transition-colors">
                   {collection.title}
                 </span>
               </Link>
@@ -85,7 +85,7 @@ export default async function HomePage() {
           </p>
           <Link
             href="/collections/ramadan-eid"
-            className="inline-block mt-8 border border-ink px-8 py-3 text-sm tracking-wide transition-all duration-300 hover:bg-ink hover:text-paper hover:-translate-y-0.5"
+            className="inline-block mt-8 border border-brand px-8 py-3 text-sm tracking-wide transition-all duration-300 hover:bg-brand hover:text-paper hover:-translate-y-0.5"
           >
             Shop Ramadan &amp; Eid
           </Link>

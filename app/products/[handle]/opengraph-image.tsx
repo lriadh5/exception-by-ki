@@ -22,11 +22,11 @@ export default async function Image({ params }: { params: Promise<{ handle: stri
           padding: 72,
           background: image
             ? `linear-gradient(135deg, ${image.from}, ${image.to})`
-            : "#1a1613",
-          color: "#faf7f2",
+            : "#0b5740",
+          color: "#f8f3e7",
         }}
       >
-        <div style={{ fontSize: 22, letterSpacing: 6, color: "#d8bc8e", display: "flex" }}>
+        <div style={{ fontSize: 22, letterSpacing: 6, color: "#b6c7b8", display: "flex" }}>
           EXCEPTION BY K&amp;I
         </div>
         <div style={{ fontSize: 56, marginTop: 16, maxWidth: 900, display: "flex" }}>

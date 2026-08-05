@@ -10,7 +10,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: BRAND_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/icon.svg`,
+    logo: `${SITE_URL}/logo-badge.png`,
   };
 }
 

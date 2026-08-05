@@ -76,9 +76,9 @@ export function AddToCartForm({ product }: { product: Product }) {
                   title={!available && !active ? `${value} — not available with current selection` : undefined}
                   className={`px-4 py-2 text-sm border rounded-sm transition-colors ${
                     active
-                      ? "border-ink bg-ink text-paper"
+                      ? "border-brand bg-brand text-paper"
                       : available
-                        ? "border-line text-ink-soft hover:border-ink"
+                        ? "border-line text-ink-soft hover:border-brand"
                         : "border-line text-ink-soft/40 line-through cursor-not-allowed"
                   }`}
                 >
@@ -110,7 +110,7 @@ export function AddToCartForm({ product }: { product: Product }) {
       </div>
 
       {variant && variant.quantityAvailable > 0 && variant.quantityAvailable <= 5 && (
-        <p className="text-sm text-brass-dark">Only {variant.quantityAvailable} left in stock.</p>
+        <p className="text-sm text-warning">Only {variant.quantityAvailable} left in stock.</p>
       )}
 
       {(localError || cartError) && (
@@ -123,7 +123,7 @@ export function AddToCartForm({ product }: { product: Product }) {
         onClick={handleAddToCart}
         disabled={!inStock || isLoading}
         aria-busy={isLoading}
-        className="w-full bg-ink text-paper py-4 text-sm tracking-wide transition-all duration-300 hover:bg-ink-soft hover:shadow-md disabled:opacity-50 disabled:hover:shadow-none"
+        className="w-full bg-brand text-paper py-4 text-sm tracking-wide transition-all duration-300 hover:bg-brand-dark hover:shadow-md disabled:opacity-50 disabled:hover:shadow-none"
       >
         {!variant
           ? "Select options"
