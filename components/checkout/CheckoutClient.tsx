@@ -90,7 +90,7 @@ export function CheckoutClient() {
               onClick={handleContinue}
               disabled={isRedirecting}
               aria-busy={isRedirecting}
-              className="w-full bg-ink text-paper py-4 text-sm tracking-wide hover:bg-ink-soft transition-colors disabled:opacity-50"
+              className="w-full bg-ink text-paper py-4 text-sm tracking-wide transition-all duration-300 hover:bg-ink-soft hover:shadow-md disabled:opacity-50 disabled:hover:shadow-none"
             >
               {isRedirecting ? "Redirecting…" : "Continue to Secure Checkout"}
             </button>

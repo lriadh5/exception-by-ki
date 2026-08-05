@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -45,13 +45,28 @@ export const metadata: Metadata = {
   },
 };
 
+// themeColor mirrors --color-ink (app/globals.css) — the browser chrome
+// color on mobile (address bar, task switcher). Revisit once the brand
+// green replaces --color-ink as the primary color.
+export const viewport: Viewport = {
+  themeColor: "#1a1613",
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* FadeIn (components/ui/FadeIn.tsx) hides content until an
+            IntersectionObserver reveals it — without JS that never runs,
+            so force it visible rather than leave sections permanently
+            invisible. */}
+        <noscript>
+          <style>{`.js-fade-hidden { opacity: 1 !important; }`}</style>
+        </noscript>
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
         <CookieConsentProvider>

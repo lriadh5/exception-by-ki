@@ -28,6 +28,10 @@
   --font-sans: var(--font-inter);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-paper);
   color: var(--color-ink);
@@ -36,4 +40,46 @@ body {
 
 h1, h2, h3, .font-serif {
   font-family: var(--font-serif), Georgia, serif;
+}
+
+::selection {
+  background: var(--color-brass-light);
+  color: var(--color-ink);
+}
+
+/* Visible on keyboard navigation only — mouse/touch clicks don't trigger
+   :focus-visible, so this never adds a ring to a clicked button/link. */
+:focus-visible {
+  outline: 2px solid var(--color-brass-dark);
+  outline-offset: 2px;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.js-fade-hidden {
+  opacity: 0;
+}
+
+/* Respect the OS-level motion preference — the reveal still happens
+   (content isn't hidden), it just doesn't move or fade. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-in-up {
+    animation: none;
+  }
 }

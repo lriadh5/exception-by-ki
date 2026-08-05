@@ -13,16 +13,18 @@ export function ProductCard({ product }: { product: Product }) {
     >
       <ProductSwatch
         image={product.images[0]}
-        className="aspect-square rounded-sm transition-transform duration-300 group-hover:scale-[1.02]"
+        className="aspect-square rounded-sm overflow-hidden shadow-sm transition-all duration-500 ease-out group-hover:scale-[1.03] group-hover:shadow-md"
       />
       {price && (
         <WishlistButton
           item={{ handle: product.handle, title: product.title, image: product.images[0], price }}
-          className="absolute top-3 right-3 bg-paper/80 backdrop-blur rounded-full h-8 w-8 flex items-center justify-center"
+          className="absolute top-3 right-3 bg-paper/80 backdrop-blur rounded-full h-8 w-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
         />
       )}
       <div className="mt-3 space-y-1">
-        <h3 className="text-sm text-ink">{product.title}</h3>
+        <h3 className="text-sm text-ink transition-colors duration-300 group-hover:text-brass-dark">
+          {product.title}
+        </h3>
         {price && (
           <p className="text-sm text-ink-soft">{formatMoney(price)}</p>
         )}

@@ -123,7 +123,7 @@ export function AddToCartForm({ product }: { product: Product }) {
         onClick={handleAddToCart}
         disabled={!inStock || isLoading}
         aria-busy={isLoading}
-        className="w-full bg-ink text-paper py-4 text-sm tracking-wide hover:bg-ink-soft transition-colors disabled:opacity-50"
+        className="w-full bg-ink text-paper py-4 text-sm tracking-wide transition-all duration-300 hover:bg-ink-soft hover:shadow-md disabled:opacity-50 disabled:hover:shadow-none"
       >
         {!variant
           ? "Select options"
