@@ -53,11 +53,11 @@ export const products: Product[] = [
     handle: "hand-hammered-silver-casserole",
     title: "Hand-Hammered Silver Casserole with Lid",
     description:
-      "Hand-hammered stainless steel finished with sculpted vine handles and a domed lid — a casserole made to travel from stovetop to table and stay there.",
+      "A hand-hammered stainless steel casserole with a domed lid and sculpted vine handles — built to travel from stovetop to table and stay there for good.",
     collectionHandles: ["cookware", "gift-sets"],
     images: [
       {
-        alt: "Hand-Hammered Silver Casserole with Lid",
+        alt: "Hand-hammered stainless steel casserole with a domed lid and ornate scrolled handles, styled on a marble kitchen counter",
         url: "/products/silver-casserole.jpg",
         from: "#8a8f92",
         to: "#4a4d4f",
@@ -122,11 +122,11 @@ export const products: Product[] = [
     handle: "hammered-gold-casserole",
     title: "Hammered Gold Casserole with Lid",
     description:
-      "The same hand-hammered silhouette in a warm gold-plated finish — a showpiece for the table as much as the stove.",
+      "A hand-hammered gold-plated casserole with a domed lid, sharing the same sculpted silhouette in a warm gold finish — a showpiece for stove and table alike.",
     collectionHandles: ["cookware", "gift-sets"],
     images: [
       {
-        alt: "Hammered Gold Casserole with Lid",
+        alt: "Gold-plated hammered casserole pot with a domed lid and sculpted handles, set on a linen table runner",
         url: "/products/gold-casserole.jpg",
         from: "#c9a24a",
         to: "#8a6a24",
@@ -152,11 +152,11 @@ export const products: Product[] = [
     handle: "two-tier-crystal-blossom-stand",
     title: "Two-Tier Crystal Blossom Dessert Stand",
     description:
-      "Two mirror-polished tiers joined by a crystal blossom stem, balanced on a sculpted pedestal base — built to hold dates and sweets for a crowd.",
+      "A two-tier mirror-polished dessert stand joined by a crystal blossom stem and balanced on a sculpted pedestal — built to hold dates and sweets for a crowd.",
     collectionHandles: ["kitchen-accessories", "home-decor", "ramadan-eid", "gift-sets"],
     images: [
       {
-        alt: "Two-Tier Crystal Blossom Dessert Stand",
+        alt: "Two-tier mirror-polished dessert stand with a crystal flower stem connecting the tiers, on a cream backdrop",
         url: "/products/two-tier-stand.jpg",
         from: "#c7c9cb",
         to: "#8d9092",
@@ -182,11 +182,11 @@ export const products: Product[] = [
     handle: "crystal-blossom-vanity-set",
     title: "Crystal Blossom Vanity Set",
     description:
-      "A stemmed dish, a covered jar, and the tray that carries them, each finished with hand-set enamel blossoms along a brass vine — for the counter, the vanity, or the gift it becomes.",
+      "A crystal blossom vanity set — stemmed dish, covered jar, and tray — finished with hand-set enamel blossoms along a brass vine, for the counter or the gift it becomes.",
     collectionHandles: ["home-decor", "gift-sets"],
     images: [
       {
-        alt: "Crystal Blossom Vanity Set",
+        alt: "Mirror-polished stemmed goblet and covered jar with hand-set crystal blossom accents, arranged on a matching rectangular tray",
         url: "/products/goblet-set.jpg",
         from: "#d8d3c8",
         to: "#a89c7e",
@@ -212,11 +212,11 @@ export const products: Product[] = [
     handle: "mirror-rectangular-tray-set",
     title: "Mirror Rectangular Trays, Set of Two",
     description:
-      "Two mirror-polished serving trays in graduated sizes, each finished with a hand-cast brass branch handle — nest them together or set them side by side.",
+      "A set of two mirror-polished rectangular serving trays in graduated sizes, each finished with a hand-cast brass branch handle for nesting or display.",
     collectionHandles: ["kitchen-accessories", "home-decor", "gift-sets"],
     images: [
       {
-        alt: "Mirror Rectangular Trays, Set of Two",
+        alt: "Two mirror-polished rectangular serving trays with brass branch handles, nested together on a marble countertop",
         url: "/products/mirror-trays.jpg",
         from: "#cfd1d2",
         to: "#95989a",
@@ -242,11 +242,11 @@ export const products: Product[] = [
     handle: "rectangular-mirror-cake-stand",
     title: "Rectangular Mirror Cake Stand",
     description:
-      "A mirror-polished rectangular platter raised on a sculpted cone base and finished with a crystal blossom finial — a quiet centerpiece for cakes, pastries, or dates.",
+      "A rectangular mirror-polished cake stand raised on a sculpted cone base and finished with a crystal blossom finial — a centerpiece for cakes, pastries, or dates.",
     collectionHandles: ["kitchen-accessories", "home-decor"],
     images: [
       {
-        alt: "Rectangular Mirror Cake Stand",
+        alt: "Rectangular mirror-polished cake stand on a cone-shaped pedestal base, topped with a crystal flower finial",
         url: "/products/rect-glass-stand.jpg",
         from: "#c7c9cb",
         to: "#8d9092",
@@ -272,11 +272,11 @@ export const products: Product[] = [
     handle: "hand-pierced-silver-bakhoor-burner",
     title: "Hand-Pierced Silver Bakhoor Burner",
     description:
-      "A hammered silver dome, laser-cut in a flowing calligraphic pattern, set over a ceramic base and finished with a beaded tassel — lets the smoke of bakhoor and oud move through the room, not just up from it.",
+      "A hand-pierced silver bakhoor burner with a hammered dome cut in flowing calligraphy, set on a ceramic base — lets the smoke of bakhoor and oud fill the room.",
     collectionHandles: ["ramadan-eid", "home-decor", "gift-sets"],
     images: [
       {
-        alt: "Hand-Pierced Silver Bakhoor Burner",
+        alt: "Hammered silver bakhoor burner with a laser-cut calligraphy dome and cream ceramic base, finished with a beaded tassel",
         url: "/products/silver-burner.jpg",
         from: "#c7c9cb",
         to: "#7d7f81",
@@ -302,11 +302,11 @@ export const products: Product[] = [
     handle: "taupe-calligraphy-bakhoor-dome",
     title: "Taupe Calligraphy Bakhoor Dome",
     description:
-      "A powder-coated dome pierced in an open calligraphic pattern and topped with a crescent finial and tassel — a softer, matte companion to the silver burner, built for the same ritual.",
+      "A taupe calligraphy bakhoor dome, powder-coated and pierced in an open pattern with a crescent moon finial and tassel — a matte companion piece for the same ritual.",
     collectionHandles: ["ramadan-eid", "home-decor", "gift-sets"],
     images: [
       {
-        alt: "Taupe Calligraphy Bakhoor Dome",
+        alt: "Taupe powder-coated bakhoor dome with an open calligraphy cutout pattern and a crescent moon tassel finial",
         url: "/products/taupe-dome.jpg",
         from: "#bdb2a0",
         to: "#8a7d68",
