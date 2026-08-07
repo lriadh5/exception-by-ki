@@ -8,24 +8,24 @@ import {
 import { getProductByHandle } from "./mock-data";
 import type { Product } from "./types";
 
-// Heritage Cast Iron Dutch Oven has two option dimensions (Size x Finish)
+// Hand-Hammered Silver Casserole has two option dimensions (Size x Finish)
 // with one combination deliberately out of stock — good coverage for
 // multi-option variant matching.
-const dutchOven = getProductByHandle("heritage-cast-iron-dutch-oven") as Product;
+const casserole = getProductByHandle("hand-hammered-silver-casserole") as Product;
 
 describe("findVariantByOptions", () => {
   it("finds the exact variant for a two-dimension selection", () => {
-    const variant = findVariantByOptions(dutchOven, { Size: "6 Quart", Finish: "Brass Rim" });
-    expect(variant?.id).toBe("gid://mock/Variant/1-6qt-brass");
+    const variant = findVariantByOptions(casserole, { Size: "10 Quart", Finish: "Brushed Nickel" });
+    expect(variant?.id).toBe("gid://mock/Variant/1-10qt-brushed");
   });
 
   it("returns undefined for a combination that doesn't exist", () => {
-    const variant = findVariantByOptions(dutchOven, { Size: "10 Quart", Finish: "Brass Rim" });
+    const variant = findVariantByOptions(casserole, { Size: "12 Quart", Finish: "Brushed Nickel" });
     expect(variant).toBeUndefined();
   });
 
   it("still finds an existing but out-of-stock variant (availability is a separate concern)", () => {
-    const variant = findVariantByOptions(dutchOven, { Size: "8 Quart", Finish: "Brass Rim" });
+    const variant = findVariantByOptions(casserole, { Size: "10 Quart", Finish: "Brushed Nickel" });
     expect(variant?.available).toBe(false);
     expect(variant?.quantityAvailable).toBe(0);
   });
@@ -33,20 +33,20 @@ describe("findVariantByOptions", () => {
 
 describe("defaultSelections", () => {
   it("selects the first variant's own option values", () => {
-    expect(defaultSelections(dutchOven)).toEqual({ Size: "6 Quart", Finish: "Charcoal" });
+    expect(defaultSelections(casserole)).toEqual({ Size: "8 Quart", Finish: "Polished Silver" });
   });
 });
 
 describe("isOptionValueAvailable", () => {
   it("is true for a value that resolves to an in-stock variant", () => {
-    expect(isOptionValueAvailable(dutchOven, "Finish", "Charcoal", { Size: "6 Quart", Finish: "Charcoal" })).toBe(
-      true
-    );
+    expect(
+      isOptionValueAvailable(casserole, "Finish", "Polished Silver", { Size: "8 Quart", Finish: "Polished Silver" })
+    ).toBe(true);
   });
 
   it("is false for a value that resolves to the out-of-stock variant", () => {
     expect(
-      isOptionValueAvailable(dutchOven, "Finish", "Brass Rim", { Size: "8 Quart", Finish: "Charcoal" })
+      isOptionValueAvailable(casserole, "Finish", "Brushed Nickel", { Size: "10 Quart", Finish: "Polished Silver" })
     ).toBe(false);
   });
 });

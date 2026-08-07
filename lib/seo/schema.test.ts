@@ -31,30 +31,30 @@ describe("breadcrumbSchema", () => {
 });
 
 describe("productSchema", () => {
-  const dutchOven = getProductByHandle("heritage-cast-iron-dutch-oven") as Product;
+  const casserole = getProductByHandle("hand-hammered-silver-casserole") as Product;
 
   it("computes low/high price across variants and marks in-stock when any variant has stock", () => {
-    const schema = productSchema(dutchOven);
-    expect(schema.offers.lowPrice).toBe(189);
-    expect(schema.offers.highPrice).toBe(249);
+    const schema = productSchema(casserole);
+    expect(schema.offers.lowPrice).toBe(245);
+    expect(schema.offers.highPrice).toBe(315);
     expect(schema.offers.availability).toBe("https://schema.org/InStock");
   });
 
   it("marks a fully sold-out product as OutOfStock", () => {
     const soldOut: Product = {
-      ...dutchOven,
-      variants: dutchOven.variants.map((v) => ({ ...v, available: false, quantityAvailable: 0 })),
+      ...casserole,
+      variants: casserole.variants.map((v) => ({ ...v, available: false, quantityAvailable: 0 })),
     };
     expect(productSchema(soldOut).offers.availability).toBe("https://schema.org/OutOfStock");
   });
 
   it("omits aggregateRating when there are no reviews", () => {
-    const schema = productSchema(dutchOven, { average: 0, count: 0 });
+    const schema = productSchema(casserole, { average: 0, count: 0 });
     expect(schema).not.toHaveProperty("aggregateRating");
   });
 
   it("includes aggregateRating when there are reviews", () => {
-    const schema = productSchema(dutchOven, { average: 4.5, count: 3 });
+    const schema = productSchema(casserole, { average: 4.5, count: 3 });
     expect(schema.aggregateRating).toEqual({
       "@type": "AggregateRating",
       ratingValue: 4.5,

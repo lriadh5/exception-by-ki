@@ -15,7 +15,7 @@ test("search is reachable from the header and returns results", async ({ page })
   await page.getByRole("link", { name: "Search" }).click();
   await expect(page).toHaveURL(/\/search/);
 
-  await page.getByRole("searchbox").or(page.getByRole("textbox")).first().fill("cast iron");
+  await page.getByRole("searchbox").or(page.getByRole("textbox")).first().fill("casserole");
   await page.keyboard.press("Enter");
-  await expect(page.getByText(/dutch oven/i).first()).toBeVisible();
+  await expect(page.getByText(/casserole/i).first()).toBeVisible();
 });

@@ -81,7 +81,7 @@ export default async function HomePage() {
           <h2 className="font-serif text-2xl mb-4">Ramadan &amp; Eid, considered</h2>
           <p className="text-ink-soft">
             Serving pieces and gifts for the season of gathering — from
-            brass mortars to iftar trays.
+            bakhoor burners to dessert stands built for a full table.
           </p>
           <Link
             href="/collections/ramadan-eid"

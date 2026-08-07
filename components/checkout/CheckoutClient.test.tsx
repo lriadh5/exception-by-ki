@@ -8,12 +8,12 @@ const STORAGE_KEY = "exception-by-ki-cart";
 
 const seededLine: CartLine = {
   lineId: "line-1",
-  productHandle: "brass-handled-stainless-skillet",
-  variantId: "gid://mock/Variant/2-10in",
-  title: "Brass-Handled Stainless Skillet",
-  variantTitle: "10 inch",
-  price: { amount: 129, currencyCode: "USD" },
-  image: { alt: "Brass-Handled Stainless Skillet", from: "#5b5b5b", to: "#a97f4a" },
+  productHandle: "mirror-rectangular-tray-set",
+  variantId: "gid://mock/Variant/5-default",
+  title: "Mirror Rectangular Trays, Set of Two",
+  variantTitle: "2-Piece Set",
+  price: { amount: 135, currencyCode: "USD" },
+  image: { alt: "Mirror Rectangular Trays, Set of Two", from: "#cfd1d2", to: "#95989a" },
   quantity: 1,
   quantityAvailable: 22,
 };

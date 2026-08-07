@@ -1,9 +1,9 @@
 import { expect, test } from "@playwright/test";
 
 test("checkout in preview mode never renders a form field and explains why", async ({ page }) => {
-  await page.goto("/products/heritage-cast-iron-dutch-oven");
-  await page.getByRole("button", { name: "6 Quart", exact: true }).click();
-  await page.getByRole("button", { name: "Charcoal", exact: true }).click();
+  await page.goto("/products/hand-hammered-silver-casserole");
+  await page.getByRole("button", { name: "8 Quart", exact: true }).click();
+  await page.getByRole("button", { name: "Polished Silver", exact: true }).click();
   await page.getByRole("button", { name: "Add to Cart" }).click();
   await expect(page.getByRole("button", { name: "Added" })).toBeVisible();
 
@@ -11,7 +11,7 @@ test("checkout in preview mode never renders a form field and explains why", asy
   // add-to-cart state update — wait for that write before navigating away,
   // or the checkout page can rehydrate before it lands.
   await page.waitForFunction(
-    () => (window.localStorage.getItem("exception-by-ki-cart") ?? "").includes("heritage-cast-iron-dutch-oven")
+    () => (window.localStorage.getItem("exception-by-ki-cart") ?? "").includes("hand-hammered-silver-casserole")
   );
 
   await page.goto("/checkout");

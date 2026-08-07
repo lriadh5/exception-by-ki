@@ -2,22 +2,22 @@ import { describe, expect, it } from "vitest";
 import { cartReducer, cartSubtotal, cartTotalQuantity, initialCartState, type NewCartLine } from "./reducer";
 
 const skillet: NewCartLine = {
-  productHandle: "brass-handled-stainless-skillet",
-  variantId: "gid://mock/Variant/2-10in",
-  title: "Brass-Handled Stainless Skillet",
-  variantTitle: "10 inch",
-  price: { amount: 129, currencyCode: "USD" },
-  image: { alt: "Brass-Handled Stainless Skillet", from: "#5b5b5b", to: "#a97f4a" },
+  productHandle: "mirror-rectangular-tray-set",
+  variantId: "gid://mock/Variant/5-default",
+  title: "Mirror Rectangular Trays, Set of Two",
+  variantTitle: "2-Piece Set",
+  price: { amount: 135, currencyCode: "USD" },
+  image: { alt: "Mirror Rectangular Trays, Set of Two", from: "#cfd1d2", to: "#95989a" },
   quantityAvailable: 22,
 };
 
 const lowStock: NewCartLine = {
-  productHandle: "iftar-serving-tray",
-  variantId: "gid://mock/Variant/8-default",
-  title: "Iftar Serving Tray",
-  variantTitle: "18 inch",
-  price: { amount: 89, currencyCode: "USD" },
-  image: { alt: "Iftar Serving Tray", from: "#3d3129", to: "#c98a4b" },
+  productHandle: "hand-pierced-silver-bakhoor-burner",
+  variantId: "gid://mock/Variant/7-default",
+  title: "Hand-Pierced Silver Bakhoor Burner",
+  variantTitle: "Standard",
+  price: { amount: 95, currencyCode: "USD" },
+  image: { alt: "Hand-Pierced Silver Bakhoor Burner", from: "#c7c9cb", to: "#7d7f81" },
   quantityAvailable: 2,
 };
 
@@ -123,7 +123,7 @@ describe("cartSubtotal / cartTotalQuantity", () => {
   it("sums price * quantity across lines, and total item count separately", () => {
     let state = cartReducer(initialCartState, { type: "ADD_LINE", line: skillet, requestedQuantity: 2 });
     state = cartReducer(state, { type: "ADD_LINE", line: lowStock, requestedQuantity: 1 });
-    expect(cartSubtotal(state.lines)).toBe(129 * 2 + 89 * 1);
+    expect(cartSubtotal(state.lines)).toBe(135 * 2 + 95 * 1);
     expect(cartTotalQuantity(state.lines)).toBe(3);
   });
 });
