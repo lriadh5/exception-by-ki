@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getCollection, getProduct, listAllProducts, listProductsByCollection } from "@/lib/shopify/client";
+import { getGuidesForProduct } from "@/lib/content/client";
 import { ProductSwatch } from "@/components/commerce/ProductSwatch";
 import { AddToCartForm } from "@/components/commerce/AddToCartForm";
 import { Breadcrumbs } from "@/components/commerce/Breadcrumbs";
@@ -46,11 +48,12 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const primaryCollectionHandle = product.collectionHandles[0];
-  const [collection, collectionProducts, reviews, reviewSummary] = await Promise.all([
+  const [collection, collectionProducts, reviews, reviewSummary, guides] = await Promise.all([
     primaryCollectionHandle ? getCollection(primaryCollectionHandle) : Promise.resolve(undefined),
     primaryCollectionHandle ? listProductsByCollection(primaryCollectionHandle) : Promise.resolve([]),
     getReviews(product.handle),
     getSummary(product.handle),
+    getGuidesForProduct(product.handle),
   ]);
   const recommendations = collectionProducts.filter((p) => p.handle !== product.handle).slice(0, 4);
 
@@ -109,6 +112,20 @@ export default async function ProductPage({
               </div>
             )}
           </dl>
+
+          {guides.length > 0 && (
+            <p className="mt-6 text-sm text-ink-soft">
+              Featured in{" "}
+              {guides.map((guide, i) => (
+                <span key={guide.slug}>
+                  {i > 0 && ", "}
+                  <Link href={`/guides/${guide.slug}`} className="text-brand-dark underline">
+                    {guide.title}
+                  </Link>
+                </span>
+              ))}
+            </p>
+          )}
         </div>
       </div>
 

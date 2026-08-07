@@ -12,6 +12,8 @@ const helpLinks = [
   { title: "Contact Us", href: "/contact" },
 ];
 
+const contentLinks = [{ title: "Guides & Inspiration", href: "/guides" }];
+
 const companyLinks = [
   { title: "About Us", href: "/about" },
   { title: "Accessibility", href: "/accessibility" },
@@ -22,7 +24,7 @@ const companyLinks = [
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-line bg-paper-dim">
-      <div className="mx-auto max-w-7xl px-6 py-16 grid grid-cols-1 md:grid-cols-5 gap-10">
+      <div className="mx-auto max-w-7xl px-6 py-16 grid grid-cols-1 md:grid-cols-6 gap-10">
         <div className="md:col-span-2 space-y-6">
           <div>
             <Image src="/logo.png" alt="Exception by K&amp;I" width={88} height={52} className="h-10 w-auto" />
@@ -43,6 +45,19 @@ export function Footer() {
                   href={item.href}
                   className="text-sm text-ink-soft hover:text-ink"
                 >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-sm text-ink mb-3">Discover</h4>
+          <ul className="space-y-2">
+            {contentLinks.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-sm text-ink-soft hover:text-ink">
                   {item.title}
                 </Link>
               </li>

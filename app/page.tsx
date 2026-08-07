@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { getFeaturedProducts, listCollections } from "@/lib/shopify/client";
+import { getGuidesForCollection } from "@/lib/content/client";
 import { ProductCard } from "@/components/commerce/ProductCard";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export default async function HomePage() {
-  const [collections, featured] = await Promise.all([
+  const [collections, featured, ramadanGuides] = await Promise.all([
     listCollections(),
     getFeaturedProducts(4),
+    getGuidesForCollection("ramadan-eid"),
   ]);
 
   return (
@@ -89,6 +91,13 @@ export default async function HomePage() {
           >
             Shop Ramadan &amp; Eid
           </Link>
+          {ramadanGuides.length > 0 && (
+            <p className="mt-4">
+              <Link href={`/guides/${ramadanGuides[0].slug}`} className="text-sm text-brand-dark underline">
+                Read our styling guide: {ramadanGuides[0].title}
+              </Link>
+            </p>
+          )}
         </FadeIn>
       </section>
     </div>

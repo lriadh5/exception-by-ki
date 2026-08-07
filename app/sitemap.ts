@@ -1,15 +1,18 @@
 import type { MetadataRoute } from "next";
 import { listAllProducts, listCollections } from "@/lib/shopify/client";
+import { listGuides } from "@/lib/content/client";
 import { SITE_URL } from "@/lib/env";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [products, collections] = await Promise.all([
+  const [products, collections, guides] = await Promise.all([
     listAllProducts(),
     listCollections(),
+    listGuides(),
   ]);
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE_URL, changeFrequency: "daily", priority: 1 },
+    { url: `${SITE_URL}/guides`, changeFrequency: "weekly", priority: 0.6 },
   ];
 
   const collectionRoutes: MetadataRoute.Sitemap = collections.map((c) => ({
@@ -24,5 +27,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...collectionRoutes, ...productRoutes];
+  const guideRoutes: MetadataRoute.Sitemap = guides.map((g) => ({
+    url: `${SITE_URL}/guides/${g.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.5,
+  }));
+
+  return [...staticRoutes, ...collectionRoutes, ...productRoutes, ...guideRoutes];
 }

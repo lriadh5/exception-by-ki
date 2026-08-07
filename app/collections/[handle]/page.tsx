@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   getCollection,
   listCollections,
   listProductsByCollection,
 } from "@/lib/shopify/client";
+import { getGuidesForCollection } from "@/lib/content/client";
 import { ProductCard } from "@/components/commerce/ProductCard";
 import { Breadcrumbs } from "@/components/commerce/Breadcrumbs";
 import { Pagination } from "@/components/commerce/Pagination";
@@ -54,9 +56,10 @@ export default async function CollectionPage({
 }) {
   const { handle } = await params;
   const sp = await searchParams;
-  const [collection, allProducts] = await Promise.all([
+  const [collection, allProducts, guides] = await Promise.all([
     getCollection(handle),
     listProductsByCollection(handle),
+    getGuidesForCollection(handle),
   ]);
 
   if (!collection) notFound();
@@ -84,6 +87,15 @@ export default async function CollectionPage({
       <header className="mb-10 max-w-2xl">
         <h1 className="font-serif text-3xl mb-3">{collection.title}</h1>
         <p className="text-ink-soft">{collection.description}</p>
+        {guides.length > 0 && (
+          <p className="mt-4 text-sm">
+            {guides.map((guide) => (
+              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="text-brand-dark underline">
+                Read: {guide.title}
+              </Link>
+            ))}
+          </p>
+        )}
       </header>
 
       {allProducts.length === 0 ? (

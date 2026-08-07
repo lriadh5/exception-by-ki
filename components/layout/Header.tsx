@@ -51,6 +51,9 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-5">
+            <Link href="/guides" className="hidden lg:block text-sm text-ink-soft hover:text-ink">
+              Guides
+            </Link>
             <Link href="/search" className="hidden sm:block text-sm text-ink-soft hover:text-ink">
               Search
             </Link>

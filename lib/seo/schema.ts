@@ -1,6 +1,7 @@
 import { SITE_URL } from "@/lib/env";
 import type { Collection, Product } from "@/lib/shopify/types";
 import type { ReviewSummary } from "@/lib/reviews/types";
+import type { ContentRecord } from "@/lib/content/types";
 
 const BRAND_NAME = "Exception by K&I";
 
@@ -56,6 +57,8 @@ export function productSchema(product: Product, reviewSummary?: ReviewSummary) {
     "@type": "Product",
     name: product.title,
     description: product.description,
+    url: `${SITE_URL}/products/${product.handle}`,
+    brand: { "@type": "Brand", name: BRAND_NAME },
     ...(product.material ? { material: product.material } : {}),
     ...(product.images[0]?.url ? { image: product.images.map((i) => i.url).filter(Boolean) } : {}),
     // Only present when there are real reviews — an aggregateRating with
@@ -90,5 +93,18 @@ export function collectionPageSchema(collection: Collection, productCount: numbe
     description: collection.description,
     url: `${SITE_URL}/collections/${collection.handle}`,
     numberOfItems: productCount,
+  };
+}
+
+export function articleSchema(content: ContentRecord) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: content.title,
+    description: content.metaDescription,
+    url: `${SITE_URL}/guides/${content.slug}`,
+    datePublished: content.publishedAt,
+    author: { "@type": "Organization", name: BRAND_NAME },
+    publisher: { "@type": "Organization", name: BRAND_NAME, logo: `${SITE_URL}/logo-badge.png` },
   };
 }
