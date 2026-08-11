@@ -179,6 +179,12 @@ export const products: Product[] = [
         from: "#c7c9cb",
         to: "#8d9092",
       },
+      {
+        alt: "Two-tier crystal blossom dessert stand styled with grapes, strawberries, blueberries, kiwi, and orange",
+        url: "/products/two-tier-stand-3.jpg",
+        from: "#c7c9cb",
+        to: "#8d9092",
+      },
     ],
     material: "Mirror-Polished Stainless Steel, Crystal",
     careInstructions: "Hand wash. Dry immediately to preserve the polish.",
