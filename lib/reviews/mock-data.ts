@@ -64,9 +64,18 @@ export const reviews: Review[] = [
     productHandle: "hand-pierced-silver-bakhoor-burner",
     author: "Yusuf H.",
     rating: 5,
-    title: "Perfect for iftar",
-    body: "Fills the room with scent beautifully and the pierced pattern casts a lovely shadow when lit. Stunning on the counter too.",
+    title: "Better than a box",
+    body: "Ordered it for ma'amoul at Eid and it made the whole presentation. The dome lifts away cleanly and the pierced pattern throws a lovely shadow even before you open it.",
     createdAt: "2026-05-30",
+  },
+  {
+    id: "review-7",
+    productHandle: "crystal-blossom-vanity-set",
+    author: "Nadia F.",
+    rating: 5,
+    title: "Doubles as a bakhoor burner beautifully",
+    body: "Didn't expect the stemmed dish to work this well for bakhoor — fills the room with scent and looks like a piece of jewelry on the counter between uses.",
+    createdAt: "2026-06-15",
   },
 ];
 

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getCollection, getProduct, listAllProducts, listProductsByCollection } from "@/lib/shopify/client";
 import { getGuidesForProduct } from "@/lib/content/client";
-import { ProductSwatch } from "@/components/commerce/ProductSwatch";
+import { ProductGallery } from "@/components/commerce/ProductGallery";
 import { AddToCartForm } from "@/components/commerce/AddToCartForm";
 import { Breadcrumbs } from "@/components/commerce/Breadcrumbs";
 import { WishlistButton } from "@/components/commerce/WishlistButton";
@@ -79,10 +79,7 @@ export default async function ProductPage({
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <ProductSwatch
-          image={product.images[0]}
-          className="aspect-square rounded-sm"
-        />
+        <ProductGallery images={product.images} />
 
         <div>
           <div className="flex items-start justify-between gap-4 mb-4">

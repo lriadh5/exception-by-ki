@@ -14,10 +14,10 @@ const skillet: NewCartLine = {
 const lowStock: NewCartLine = {
   productHandle: "hand-pierced-silver-bakhoor-burner",
   variantId: "gid://mock/Variant/7-default",
-  title: "Hand-Pierced Silver Bakhoor Burner",
+  title: "Hand-Pierced Silver Sweets Box",
   variantTitle: "Standard",
   price: { amount: 95, currencyCode: "USD" },
-  image: { alt: "Hand-Pierced Silver Bakhoor Burner", from: "#c7c9cb", to: "#7d7f81" },
+  image: { alt: "Hand-Pierced Silver Sweets Box", from: "#c7c9cb", to: "#7d7f81" },
   quantityAvailable: 2,
 };
 

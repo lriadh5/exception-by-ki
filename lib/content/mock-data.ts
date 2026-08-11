@@ -33,8 +33,10 @@ export const contentRecords: ContentRecord[] = [
       "mirror-rectangular-tray-set",
       "two-tier-crystal-blossom-stand",
       "rectangular-mirror-cake-stand",
+      "crystal-blossom-vanity-set",
       "hand-pierced-silver-bakhoor-burner",
       "taupe-calligraphy-bakhoor-dome",
+      "calligraphy-nesting-bowls-set",
     ],
     primaryKeyword: "ramadan table decor",
     secondaryKeywords: [
@@ -42,6 +44,7 @@ export const contentRecords: ContentRecord[] = [
       "eid table setting",
       "iftar table decor",
       "bakhoor burner for ramadan",
+      "ma'amoul presentation box",
     ],
     intro:
       "A good iftar table does two things at once: it feeds a full house without chaos, and it makes the breaking of the fast feel like the occasion it is. None of that requires a full redecoration — a handful of considered serving pieces, layered with height and reflection, does most of the work. Here's how we'd build one.",
@@ -56,15 +59,19 @@ export const contentRecords: ContentRecord[] = [
       },
       {
         heading: "Layer height for dates and dessert",
-        body: "A flat table reads as a meal; a table with height reads as a gathering. A two-tier dessert stand does the obvious job of holding more sweets in the same footprint, but it's also just easier to reach across a crowded table than a single low platter. A rectangular mirror cake stand does similar work for a single showpiece — a plate of maamoul, a cake for the last night of the month.",
+        body: "A flat table reads as a meal; a table with height reads as a gathering. A two-tier dessert stand does the obvious job of holding more sweets in the same footprint, but it's also just easier to reach across a crowded table than a single low platter. A rectangular mirror cake stand does similar work for a single showpiece, and a set of pierced calligraphy nesting bowls covers the nuts and dates in between.",
+      },
+      {
+        heading: "Present the sweets, don't just serve them",
+        body: "Ma'amoul deserves better than a plain plate. A hammered dome — pierced in calligraphy, lifted away at the table — turns the reveal into part of the occasion instead of hiding it in the kitchen. We keep one in polished silver for a formal table and one in matte taupe for everyday use; both use the same laser-cut detailing and open the same way.",
       },
       {
         heading: "Bring in scent, not just sight",
-        body: "Bakhoor and oud are as much a part of an iftar or Eid gathering as the food is, and a pierced burner does more for the room than a straight incense stick — the cut pattern lets the smoke move and catches light from within when it's lit. We keep one in hammered silver for a more formal table and one in matte taupe for everyday use; both use the same laser-cut calligraphy detailing.",
+        body: "Bakhoor and oud are as much a part of an iftar or Eid gathering as the food is. Our crystal blossom stemmed dish, part of the vanity set, doubles as a burner — the open bowl lets the smoke move freely, and the matching lidded jar keeps bakhoor within reach without cluttering the table.",
       },
       {
         heading: "Building the table piece by piece",
-        body: "None of this needs to happen at once. Most tables we've seen built well started with one or two pieces — usually the serving trays or the casserole — and added a stand or a burner the following Ramadan. Treat the table as something you're building over a few seasons, not shopping for in one trip.",
+        body: "None of this needs to happen at once. Most tables we've seen built well started with one or two pieces — usually the serving trays or the casserole — and added a stand, a sweets box, or a burner the following Ramadan. Treat the table as something you're building over a few seasons, not shopping for in one trip.",
       },
     ],
     publishedAt: "2026-07-20",
