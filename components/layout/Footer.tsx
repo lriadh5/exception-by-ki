@@ -37,7 +37,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm text-ink mb-3">Shop</h4>
+          <p className="text-sm text-ink mb-3">Shop</p>
           <ul className="space-y-2">
             {primaryNav.map((item) => (
               <li key={item.href}>
@@ -53,7 +53,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm text-ink mb-3">Discover</h4>
+          <p className="text-sm text-ink mb-3">Discover</p>
           <ul className="space-y-2">
             {contentLinks.map((item) => (
               <li key={item.href}>
@@ -66,7 +66,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm text-ink mb-3">Help</h4>
+          <p className="text-sm text-ink mb-3">Help</p>
           <ul className="space-y-2">
             {helpLinks.map((item) => (
               <li key={item.href}>
@@ -79,7 +79,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm text-ink mb-3">Company</h4>
+          <p className="text-sm text-ink mb-3">Company</p>
           <ul className="space-y-2">
             {companyLinks.map((item) => (
               <li key={item.href}>

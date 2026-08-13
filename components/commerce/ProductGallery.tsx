@@ -14,7 +14,7 @@ export function ProductGallery({ images }: { images: ProductImage[] }) {
 
   return (
     <div>
-      <ProductSwatch image={active} className="aspect-square rounded-sm" />
+      <ProductSwatch image={active} className="aspect-square rounded-sm" priority />
 
       {images.length > 1 && (
         <div className="mt-3 grid grid-cols-5 gap-2" role="tablist" aria-label="Product images">

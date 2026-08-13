@@ -12,11 +12,17 @@ export function ProductSwatch({
   className = "",
   showLabel = true,
   sizes,
+  priority = false,
 }: {
   image: ProductImage;
   className?: string;
   showLabel?: boolean;
   sizes?: string;
+  /** Set for the single above-the-fold hero image on a page (e.g. the
+   * active PDP gallery image) so it's preloaded instead of lazy-loaded —
+   * it's typically the LCP element. Leave false everywhere else,
+   * including gallery thumbnails and grid/card images. */
+  priority?: boolean;
 }) {
   if (image.url) {
     return (
@@ -27,6 +33,7 @@ export function ProductSwatch({
           fill
           sizes={sizes ?? "(min-width: 768px) 50vw, 100vw"}
           className="object-cover"
+          priority={priority}
         />
       </div>
     );

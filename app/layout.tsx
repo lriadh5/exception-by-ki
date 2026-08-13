@@ -14,16 +14,21 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schema";
 import { IS_PREVIEW_MODE, SITE_URL } from "@/lib/env";
 
+// display: "optional" (not "swap") — the fallback font is used if the
+// real font isn't ready in time, instead of swapping mid-read. That
+// swap was cascading into large layout shifts sitewide (CLS ~0.42,
+// mostly attributed to reflow in the footer's wrapped text) since the
+// font change alters line-wrapping across many text blocks at once.
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
 });
 
 export const metadata: Metadata = {

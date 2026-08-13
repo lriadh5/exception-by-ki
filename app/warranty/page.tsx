@@ -4,6 +4,7 @@ import { LegalPage } from "@/components/legal/LegalPage";
 export const metadata: Metadata = {
   title: "Warranty",
   description: "Warranty coverage for Exception by K&I cookware and home goods.",
+  alternates: { canonical: "/warranty" },
 };
 
 export default function WarrantyPage() {

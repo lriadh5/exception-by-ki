@@ -4,6 +4,7 @@ import { LegalPage } from "@/components/legal/LegalPage";
 export const metadata: Metadata = {
   title: "Accessibility",
   description: "Our accessibility commitment and how to report issues.",
+  alternates: { canonical: "/accessibility" },
 };
 
 export default function AccessibilityPage() {

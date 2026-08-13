@@ -4,6 +4,7 @@ import { LegalPage } from "@/components/legal/LegalPage";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Terms of use for the Exception by K&I website.",
+  alternates: { canonical: "/terms-conditions" },
 };
 
 export default function TermsConditionsPage() {

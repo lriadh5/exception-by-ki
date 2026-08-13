@@ -88,13 +88,15 @@ export default async function CollectionPage({
         <h1 className="font-serif text-3xl mb-3">{collection.title}</h1>
         <p className="text-ink-soft">{collection.description}</p>
         {guides.length > 0 && (
-          <p className="mt-4 text-sm">
+          <ul className="mt-4 space-y-1 text-sm">
             {guides.map((guide) => (
-              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="text-brand-dark underline">
-                Read: {guide.title}
-              </Link>
+              <li key={guide.slug}>
+                <Link href={`/guides/${guide.slug}`} className="text-brand-dark underline">
+                  Read: {guide.title}
+                </Link>
+              </li>
             ))}
-          </p>
+          </ul>
         )}
       </header>
 

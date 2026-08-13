@@ -4,6 +4,7 @@ import { LegalPage } from "@/components/legal/LegalPage";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description: "Answers to common questions about Exception by K&I.",
+  alternates: { canonical: "/faq" },
 };
 
 const faqs = [

@@ -4,6 +4,7 @@ import { LegalPage } from "@/components/legal/LegalPage";
 export const metadata: Metadata = {
   title: "Care Guides",
   description: "How to care for cast iron, brass, copper, and stainless cookware.",
+  alternates: { canonical: "/care-guides" },
 };
 
 const guides = [

@@ -4,6 +4,7 @@ import { LegalPage } from "@/components/legal/LegalPage";
 export const metadata: Metadata = {
   title: "Returns & Refunds",
   description: "Return and refund policy for Exception by K&I.",
+  alternates: { canonical: "/returns-refunds" },
 };
 
 export default function ReturnsRefundsPage() {

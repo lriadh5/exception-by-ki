@@ -4,6 +4,7 @@ import { LegalPage } from "@/components/legal/LegalPage";
 export const metadata: Metadata = {
   title: "About Us",
   description: "The story behind Exception by K&I.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
