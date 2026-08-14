@@ -60,7 +60,14 @@ export function productSchema(product: Product, reviewSummary?: ReviewSummary) {
     url: `${SITE_URL}/products/${product.handle}`,
     brand: { "@type": "Brand", name: BRAND_NAME },
     ...(product.material ? { material: product.material } : {}),
-    ...(product.images[0]?.url ? { image: product.images.map((i) => i.url).filter(Boolean) } : {}),
+    ...(product.images[0]?.url
+      ? {
+          image: product.images
+            .map((i) => i.url)
+            .filter((url): url is string => Boolean(url))
+            .map((url) => (url.startsWith("http") ? url : `${SITE_URL}${url}`)),
+        }
+      : {}),
     // Only present when there are real reviews — an aggregateRating with
     // no reviews behind it is exactly the kind of fake data this project
     // avoids elsewhere (see README "Prepared, not built").
