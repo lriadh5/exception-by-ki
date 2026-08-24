@@ -423,6 +423,64 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "gid://mock/Product/10",
+    handle: "hand-hammered-oval-serving-dish",
+    title: "Hand-Hammered Oval Serving Dish",
+    description:
+      "A hand-hammered stainless oval dish finished with sculpted gold handles — equally at home holding breakfast, a caprese salad, or a bowl of fruit. The three sizes nest together for storage.",
+    collectionHandles: ["kitchen-accessories", "home-decor", "gift-sets"],
+    images: [
+      {
+        alt: "Three nested hand-hammered oval stainless dishes with gold triangular handles, styled on a marble table with fruit and coffee",
+        url: "/products/hammered-oval-dish.jpg",
+        from: "#c7c9cb",
+        to: "#8d9092",
+      },
+      {
+        alt: "Three hand-hammered oval dishes shown separated from above, showing the hammered texture and gold handles",
+        url: "/products/hammered-oval-dish-2.jpg",
+        from: "#c7c9cb",
+        to: "#8d9092",
+      },
+      {
+        alt: "Hammered oval dishes in use, plated with eggs and avocado toast, fruit and croissants, and a caprese salad",
+        url: "/products/hammered-oval-dish-3.jpg",
+        from: "#c7c9cb",
+        to: "#8d9092",
+      },
+    ],
+    material: "Hammered Stainless Steel, Gold-Plated Handles",
+    careInstructions: "Hand wash only. Avoid abrasive cleaners on the gold-plated handles.",
+    occasion: ["Everyday", "Hosting", "Housewarming"],
+    options: [{ name: "Size", values: ["10 Inch", "11 Inch", "12 Inch"] }],
+    variants: [
+      {
+        id: "gid://mock/Variant/10-10in",
+        title: "10 Inch",
+        price: USD(35),
+        available: true,
+        quantityAvailable: 20,
+        selectedOptions: [{ name: "Size", value: "10 Inch" }],
+      },
+      {
+        id: "gid://mock/Variant/10-11in",
+        title: "11 Inch",
+        price: USD(45),
+        available: true,
+        quantityAvailable: 16,
+        selectedOptions: [{ name: "Size", value: "11 Inch" }],
+      },
+      {
+        id: "gid://mock/Variant/10-12in",
+        title: "12 Inch",
+        price: USD(55),
+        available: true,
+        quantityAvailable: 12,
+        selectedOptions: [{ name: "Size", value: "12 Inch" }],
+      },
+    ],
+  },
 ];
 
 export function getAllProducts(): Product[] {
