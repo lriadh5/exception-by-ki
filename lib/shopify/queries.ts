@@ -7,7 +7,22 @@ const PRODUCT_FRAGMENT = /* GraphQL */ `
     handle
     title
     description
+    descriptionHtml
     productType
+    seo {
+      title
+      description
+    }
+    metafields(
+      identifiers: [
+        { namespace: "specs", key: "material_detail" }
+        { namespace: "specs", key: "care_instructions" }
+        { namespace: "specs", key: "occasions" }
+      ]
+    ) {
+      key
+      value
+    }
     images(first: 6) {
       edges {
         node {
@@ -25,6 +40,7 @@ const PRODUCT_FRAGMENT = /* GraphQL */ `
         node {
           id
           title
+          sku
           availableForSale
           quantityAvailable
           selectedOptions {

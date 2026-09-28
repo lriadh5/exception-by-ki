@@ -30,22 +30,55 @@ describe("breadcrumbSchema", () => {
   });
 });
 
+// Narrows productSchema's union to the ProductGroup shape.
+function asGroup(schema: ReturnType<typeof productSchema>) {
+  if (!("hasVariant" in schema)) throw new Error("expected a ProductGroup");
+  return schema;
+}
+
 describe("productSchema", () => {
   const casserole = getProductByHandle("hand-hammered-silver-casserole") as Product;
+  const ovalDish = getProductByHandle("hand-hammered-oval-serving-dish") as Product;
 
-  it("computes low/high price across variants and marks in-stock when any variant has stock", () => {
-    const schema = productSchema(casserole);
-    expect(schema.offers.lowPrice).toBe(245);
-    expect(schema.offers.highPrice).toBe(315);
-    expect(schema.offers.availability).toBe("https://schema.org/InStock");
+  it("describes a multi-variant product as a ProductGroup with one offer per variant", () => {
+    const schema = asGroup(productSchema(ovalDish));
+    expect(schema["@type"]).toBe("ProductGroup");
+    expect(schema).toMatchObject({ productGroupID: "hand-hammered-oval-serving-dish", variesBy: ["https://schema.org/size"] });
+    expect(schema.hasVariant).toHaveLength(3);
+    expect(schema.hasVariant[0]).toMatchObject({
+      "@type": "Product",
+      sku: "EKI-OVAL-10",
+      size: "10 Inch",
+      material: "Hammered stainless steel; gold-plated handles",
+      offers: {
+        "@type": "Offer",
+        price: "35.00",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
+      },
+    });
   });
 
-  it("marks a fully sold-out product as OutOfStock", () => {
-    const soldOut: Product = {
-      ...casserole,
-      variants: casserole.variants.map((v) => ({ ...v, available: false, quantityAvailable: 0 })),
-    };
-    expect(productSchema(soldOut).offers.availability).toBe("https://schema.org/OutOfStock");
+  it("marks each variant's availability separately", () => {
+    const offers = asGroup(productSchema(casserole)).hasVariant.map((v) => v.offers.availability);
+    expect(offers).toEqual([
+      "https://schema.org/InStock",
+      "https://schema.org/InStock",
+      "https://schema.org/InStock",
+      "https://schema.org/OutOfStock",
+    ]);
+  });
+
+  it("describes a single-variant product as a Product with one Offer", () => {
+    const single: Product = { ...ovalDish, variants: [ovalDish.variants[0]] };
+    const schema = productSchema(single);
+    expect(schema["@type"]).toBe("Product");
+    expect(schema).toMatchObject({ sku: "EKI-OVAL-10", offers: { "@type": "Offer", price: "35.00" } });
+  });
+
+  it("never emits a gtin", () => {
+    expect(JSON.stringify(productSchema(ovalDish))).not.toMatch(/gtin/i);
   });
 
   it("omits aggregateRating when there are no reviews", () => {

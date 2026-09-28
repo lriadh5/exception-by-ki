@@ -27,13 +27,16 @@ export async function generateMetadata({
   const { handle } = await params;
   const product = await getProduct(handle);
   if (!product) return {};
+  // A Shopify SEO title already carries the brand, so it bypasses the
+  // layout's "%s | Exception by K&I" template instead of doubling it.
+  const description = product.seoDescription ?? product.description;
   return {
-    title: product.title,
-    description: product.description,
+    title: product.seoTitle ? { absolute: product.seoTitle } : product.title,
+    description,
     alternates: { canonical: `/products/${product.handle}` },
     openGraph: {
-      title: product.title,
-      description: product.description,
+      title: product.seoTitle ?? product.title,
+      description,
     },
   };
 }
@@ -89,7 +92,16 @@ export default async function ProductPage({
               className="mt-1 shrink-0"
             />
           </div>
-          <p className="text-ink-soft mb-8">{product.description}</p>
+          {product.descriptionHtml ? (
+            // Merchant-authored HTML from the Shopify admin (see
+            // docs/catalog-standard.md §3), not user input.
+            <div
+              className="text-ink-soft mb-8 space-y-3 [&_h3]:font-serif [&_h3]:text-lg [&_h3]:text-ink [&_h3]:pt-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-brand-dark [&_a]:underline"
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            />
+          ) : (
+            <p className="text-ink-soft mb-8">{product.description}</p>
+          )}
 
           <AddToCartForm product={product} />
 
