@@ -426,38 +426,45 @@ export const products: Product[] = [
   {
     id: "gid://mock/Product/10",
     handle: "hand-hammered-oval-serving-dish",
-    title: "Hand-Hammered Oval Serving Dish",
+    title: "Hand-Hammered Stainless Steel Oval Serving Dish with Gold Handles",
     description:
-      "A hand-hammered stainless oval dish finished with sculpted gold handles — equally at home holding breakfast, a caprese salad, or a bowl of fruit. The three sizes nest together for storage.",
-    collectionHandles: ["kitchen-accessories", "home-decor", "gift-sets"],
+      "A hand-hammered stainless steel oval serving dish with gold-plated handles, made for everyday breakfasts and for setting a table for guests. Three sizes (10, 11 and 12 inch) nest together for storage; each size is sold separately.",
+    descriptionHtml:
+      '<p>A hand-hammered stainless steel oval serving dish with gold-plated handles, made for everyday breakfasts and for setting a table for guests.</p><h3>Features</h3><ul><li>Hand-hammered stainless steel with a textured surface</li><li>Triangular gold-plated handles</li><li>Three sizes (10, 11 and 12 inch) that nest together for storage; each size is sold separately</li></ul><h3>Materials</h3><ul><li>Dish: hammered stainless steel</li><li>Handles: gold-plated</li></ul><h3>Ideal for</h3><p>Eggs and toast, fruit and pastries, salads like caprese, and serving at gatherings, from weekend brunch to iftar and Eid tables.</p><h3>Care</h3><p>Hand wash only. Avoid abrasive cleaners on the gold-plated handles.</p><h3>Shipping</h3><p>See our <a href="/shipping-policy">shipping policy</a>.</p>',
+    seoTitle: "Hammered Oval Serving Dish with Gold Handles | Exception by K&I",
+    seoDescription:
+      "Hand-hammered stainless steel oval serving dish with gold-plated handles, in 10, 11 and 12 inch sizes that nest together. For breakfast, brunch and hosting.",
+    productType: "Serving Dish",
+    collectionHandles: ["kitchen-accessories", "gift-sets"],
     images: [
       {
-        alt: "Three nested hand-hammered oval stainless dishes with gold triangular handles, styled on a marble table with fruit and coffee",
+        alt: "Three nested hand-hammered oval dishes with gold handles on a woven placemat, with fruit, croissants, orange juice and coffee behind",
         url: "/products/hammered-oval-dish.jpg",
         from: "#c7c9cb",
         to: "#8d9092",
       },
       {
-        alt: "Three hand-hammered oval dishes shown separated from above, showing the hammered texture and gold handles",
+        alt: "Three hand-hammered dishes in graduated sizes seen from above on a white marble counter, showing the dimpled texture and gold handles",
         url: "/products/hammered-oval-dish-2.jpg",
         from: "#c7c9cb",
         to: "#8d9092",
       },
       {
-        alt: "Hammered oval dishes in use, plated with eggs and avocado toast, fruit and croissants, and a caprese salad",
+        alt: "Three hammered dishes in use: fruit, croissants and yogurt; a caprese salad with avocado; and fried eggs with toast, arugula and avocado",
         url: "/products/hammered-oval-dish-3.jpg",
         from: "#c7c9cb",
         to: "#8d9092",
       },
     ],
-    material: "Hammered Stainless Steel, Gold-Plated Handles",
+    material: "Hammered stainless steel; gold-plated handles",
     careInstructions: "Hand wash only. Avoid abrasive cleaners on the gold-plated handles.",
-    occasion: ["Everyday", "Hosting", "Housewarming"],
+    occasion: ["Everyday", "Hosting", "Housewarming", "Ramadan & Eid gatherings"],
     options: [{ name: "Size", values: ["10 Inch", "11 Inch", "12 Inch"] }],
     variants: [
       {
         id: "gid://mock/Variant/10-10in",
         title: "10 Inch",
+        sku: "EKI-OVAL-10",
         price: USD(35),
         available: true,
         quantityAvailable: 20,
@@ -466,6 +473,7 @@ export const products: Product[] = [
       {
         id: "gid://mock/Variant/10-11in",
         title: "11 Inch",
+        sku: "EKI-OVAL-11",
         price: USD(45),
         available: true,
         quantityAvailable: 16,
@@ -474,6 +482,7 @@ export const products: Product[] = [
       {
         id: "gid://mock/Variant/10-12in",
         title: "12 Inch",
+        sku: "EKI-OVAL-12",
         price: USD(55),
         available: true,
         quantityAvailable: 12,

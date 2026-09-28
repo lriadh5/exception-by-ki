@@ -35,13 +35,21 @@ export type ProductVariant = {
   /** Units in stock. 0 means out of stock regardless of `available`. */
   quantityAvailable: number;
   selectedOptions: SelectedOption[];
+  sku?: string;
 };
 
 export type Product = {
   id: string;
   handle: string;
   title: string;
+  /** Plain-text description — meta tags, search, structured data. */
   description: string;
+  /** Formatted description (headings, lists) from Shopify; rendered on the product page when present. */
+  descriptionHtml?: string;
+  /** Shopify SEO overrides. Fall back to title/description when unset. */
+  seoTitle?: string;
+  seoDescription?: string;
+  productType?: string;
   collectionHandles: string[];
   images: ProductImage[];
   /** Option dimensions this product varies by (size, color, material, finish, ...). */

@@ -1,5 +1,5 @@
 import { SITE_URL } from "@/lib/env";
-import type { Collection, Product } from "@/lib/shopify/types";
+import type { Collection, Product, ProductVariant } from "@/lib/shopify/types";
 import type { ReviewSummary } from "@/lib/reviews/types";
 import type { ContentRecord } from "@/lib/content/types";
 
@@ -47,31 +47,53 @@ export function breadcrumbSchema(items: BreadcrumbItem[]) {
   };
 }
 
-export function productSchema(product: Product, reviewSummary?: ReviewSummary) {
-  const prices = product.variants.map((v) => v.price.amount);
-  const inStock = product.variants.some((v) => v.available && v.quantityAvailable > 0);
-  const currency = product.variants[0]?.price.currencyCode ?? "USD";
+// schema.org properties that ProductGroup.variesBy accepts, keyed by the
+// lowercased Shopify option name. Options outside this map are still
+// described per variant through the variant name.
+const VARIES_BY: Record<string, string> = {
+  size: "https://schema.org/size",
+  color: "https://schema.org/color",
+  colour: "https://schema.org/color",
+  material: "https://schema.org/material",
+  pattern: "https://schema.org/pattern",
+};
 
+function variantOffer(product: Product, variant: ProductVariant) {
   return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.title,
-    description: product.description,
+    "@type": "Offer",
+    price: variant.price.amount.toFixed(2),
+    priceCurrency: variant.price.currencyCode,
+    availability:
+      variant.available && variant.quantityAvailable > 0
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+    itemCondition: "https://schema.org/NewCondition",
     url: `${SITE_URL}/products/${product.handle}`,
+  };
+}
+
+export function productSchema(product: Product, reviewSummary?: ReviewSummary) {
+  const url = `${SITE_URL}/products/${product.handle}`;
+  const images = product.images
+    .map((i) => i.url)
+    .filter((u): u is string => Boolean(u))
+    .map((u) => (u.startsWith("http") ? u : `${SITE_URL}${u}`));
+
+  // Fields shared by the product (or product group) and each variant.
+  // No gtin: only real barcodes may ever be emitted, and none exist yet.
+  const shared = {
+    description: product.description,
     brand: { "@type": "Brand", name: BRAND_NAME },
     ...(product.material ? { material: product.material } : {}),
-    ...(product.images[0]?.url
-      ? {
-          image: product.images
-            .map((i) => i.url)
-            .filter((url): url is string => Boolean(url))
-            .map((url) => (url.startsWith("http") ? url : `${SITE_URL}${url}`)),
-        }
-      : {}),
-    // Only present when there are real reviews — an aggregateRating with
-    // no reviews behind it is exactly the kind of fake data this project
-    // avoids elsewhere (see README "Prepared, not built").
-    ...(reviewSummary && reviewSummary.count > 0
+    ...(product.productType ? { category: product.productType } : {}),
+    ...(images.length > 0 ? { image: images } : {}),
+  };
+
+  // Only present when there are real reviews — an aggregateRating with
+  // no reviews behind it is exactly the kind of fake data this project
+  // avoids elsewhere (see README "Prepared, not built").
+  const rating =
+    reviewSummary && reviewSummary.count > 0
       ? {
           aggregateRating: {
             "@type": "AggregateRating",
@@ -79,16 +101,49 @@ export function productSchema(product: Product, reviewSummary?: ReviewSummary) {
             reviewCount: reviewSummary.count,
           },
         }
-      : {}),
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: currency,
-      lowPrice: Math.min(...prices),
-      highPrice: Math.max(...prices),
-      offerCount: product.variants.length,
-      availability: inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-      url: `${SITE_URL}/products/${product.handle}`,
-    },
+      : {};
+
+  if (product.variants.length === 1) {
+    const [variant] = product.variants;
+    return {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: product.title,
+      url,
+      ...shared,
+      ...(variant.sku ? { sku: variant.sku } : {}),
+      ...rating,
+      offers: variantOffer(product, variant),
+    };
+  }
+
+  // Multiple variants: a ProductGroup with one Product per variant, so each
+  // size/finish carries its own SKU, price and availability.
+  const variesBy = product.options
+    .map((o) => VARIES_BY[o.name.toLowerCase()])
+    .filter((v): v is string => Boolean(v));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProductGroup",
+    name: product.title,
+    url,
+    productGroupID: product.handle,
+    ...(variesBy.length > 0 ? { variesBy } : {}),
+    ...shared,
+    ...rating,
+    hasVariant: product.variants.map((variant) => ({
+      "@type": "Product",
+      name: `${product.title} – ${variant.title}`,
+      ...shared,
+      ...(variant.sku ? { sku: variant.sku } : {}),
+      ...Object.fromEntries(
+        variant.selectedOptions
+          .filter((o) => VARIES_BY[o.name.toLowerCase()])
+          .map((o) => [VARIES_BY[o.name.toLowerCase()].replace("https://schema.org/", ""), o.value])
+      ),
+      offers: variantOffer(product, variant),
+    })),
   };
 }
 
