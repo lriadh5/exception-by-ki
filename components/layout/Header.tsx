@@ -13,7 +13,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b border-line">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between gap-6 h-20">
           <button
             className="md:hidden text-ink"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -35,8 +35,8 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
-            <ul className="flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8 min-w-0" aria-label="Primary">
+            <ul className="flex items-center gap-x-5 gap-y-1 flex-wrap justify-end">
               {primaryNav.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -50,7 +50,7 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 shrink-0">
             <Link href="/guides" className="hidden lg:block text-sm text-ink-soft hover:text-ink">
               Guides
             </Link>
