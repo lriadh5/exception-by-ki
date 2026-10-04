@@ -1,12 +1,9 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { getCollection, getProduct, listAllProducts, listProductsByCollection } from "@/lib/shopify/client";
 import { getGuidesForProduct } from "@/lib/content/client";
-import { ProductGallery } from "@/components/commerce/ProductGallery";
-import { AddToCartForm } from "@/components/commerce/AddToCartForm";
+import { ProductDetail } from "@/components/commerce/ProductDetail";
 import { Breadcrumbs } from "@/components/commerce/Breadcrumbs";
-import { WishlistButton } from "@/components/commerce/WishlistButton";
 import { RecentlyViewedStrip } from "@/components/commerce/RecentlyViewedStrip";
 import { ProductCard } from "@/components/commerce/ProductCard";
 import { ReviewsSection } from "@/components/commerce/ReviewsSection";
@@ -57,8 +54,6 @@ export default async function ProductPage({
   ]);
   const recommendations = collectionProducts.filter((p) => p.handle !== product.handle).slice(0, 4);
 
-  const defaultPrice = product.variants[0].price;
-
   return (
     <div className="mx-auto max-w-7xl px-6 py-16">
       <JsonLd data={productSchema(product, reviewSummary)} />
@@ -78,53 +73,7 @@ export default async function ProductPage({
         ]}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <ProductGallery images={product.images} />
-
-        <div>
-          <div className="flex items-start justify-between gap-4 mb-4">
-            <h1 className="font-serif text-3xl">{product.title}</h1>
-            <WishlistButton
-              item={{ handle: product.handle, title: product.title, image: product.images[0], price: defaultPrice }}
-              className="mt-1 shrink-0"
-            />
-          </div>
-          <p className="text-ink-soft mb-8">{product.description}</p>
-
-          <AddToCartForm product={product} />
-
-          <dl className="mt-10 space-y-3 border-t border-line pt-6 text-sm">
-            {product.material && (
-              <div className="flex justify-between">
-                <dt className="text-ink-soft">Material</dt>
-                <dd className="text-ink">{product.material}</dd>
-              </div>
-            )}
-            {product.careInstructions && (
-              <div className="flex justify-between gap-8">
-                <dt className="text-ink-soft shrink-0">Care</dt>
-                <dd className="text-ink text-right">
-                  {product.careInstructions}
-                </dd>
-              </div>
-            )}
-          </dl>
-
-          {guides.length > 0 && (
-            <p className="mt-6 text-sm text-ink-soft">
-              Featured in{" "}
-              {guides.map((guide, i) => (
-                <span key={guide.slug}>
-                  {i > 0 && ", "}
-                  <Link href={`/guides/${guide.slug}`} className="text-brand-dark underline">
-                    {guide.title}
-                  </Link>
-                </span>
-              ))}
-            </p>
-          )}
-        </div>
-      </div>
+      <ProductDetail product={product} guides={guides} />
 
       {recommendations.length > 0 && (
         <section className="mt-20 border-t border-line pt-10">
@@ -138,7 +87,7 @@ export default async function ProductPage({
       )}
 
       <RecentlyViewedStrip
-        current={{ handle: product.handle, title: product.title, image: product.images[0], price: defaultPrice }}
+        current={{ handle: product.handle, title: product.title, image: product.images[0], price: product.variants[0].price }}
       />
 
       <ReviewsSection reviews={reviews} summary={reviewSummary} />

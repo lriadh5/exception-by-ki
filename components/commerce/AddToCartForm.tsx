@@ -1,34 +1,42 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import type { Product } from "@/lib/shopify/types";
+import { useState } from "react";
+import type { Product, ProductVariant } from "@/lib/shopify/types";
 import { formatMoney } from "@/lib/format";
 import { useCart } from "@/lib/cart/cart-context";
 import {
   clampQuantity,
-  defaultSelections,
-  findVariantByOptions,
   isOptionValueAvailable,
+  isOptionValueValid,
   type OptionSelections,
 } from "@/lib/shopify/variant";
 
-export function AddToCartForm({ product }: { product: Product }) {
+/**
+ * Selections/variant are owned by ProductDetail (the parent) rather than
+ * this form, so the gallery can react to color changes too — see
+ * ProductDetail.tsx.
+ */
+export function AddToCartForm({
+  product,
+  selections,
+  onSelectOption,
+  variant,
+}: {
+  product: Product;
+  selections: OptionSelections;
+  onSelectOption: (name: string, value: string) => void;
+  variant: ProductVariant | undefined;
+}) {
   const { addLine, error: cartError, isLoading } = useCart();
-  const [selections, setSelections] = useState<OptionSelections>(() => defaultSelections(product));
   const [quantity, setQuantity] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
-
-  const variant = useMemo(
-    () => findVariantByOptions(product, selections),
-    [product, selections]
-  );
 
   const inStock = Boolean(variant && variant.available && variant.quantityAvailable > 0);
   const maxQuantity = variant ? clampQuantity(variant.quantityAvailable, variant.quantityAvailable) : 1;
 
   function selectOption(name: string, value: string) {
-    setSelections((prev) => ({ ...prev, [name]: value }));
+    onSelectOption(name, value);
     setQuantity(1);
     setLocalError(null);
   }
@@ -65,21 +73,27 @@ export function AddToCartForm({ product }: { product: Product }) {
           <div className="flex flex-wrap gap-2">
             {option.values.map((value) => {
               const active = selections[option.name] === value;
-              const available = isOptionValueAvailable(product, option.name, value, selections);
+              // A swatch stays clickable (to preview the photo/details) as
+              // long as the combination genuinely exists, even when it's
+              // out of stock — only Add to Cart is gated on real stock.
+              const valid = isOptionValueValid(product, option.name, value, selections);
+              const inStock = isOptionValueAvailable(product, option.name, value, selections);
               return (
                 <button
                   key={value}
                   type="button"
                   onClick={() => selectOption(option.name, value)}
                   aria-pressed={active}
-                  disabled={!available && !active}
-                  title={!available && !active ? `${value} — not available with current selection` : undefined}
+                  disabled={!valid}
+                  title={valid && !inStock ? `${value} — out of stock` : !valid ? `${value} — not available` : undefined}
                   className={`px-4 py-2 text-sm border rounded-sm transition-colors ${
                     active
                       ? "border-brand bg-brand text-paper"
-                      : available
-                        ? "border-line text-ink-soft hover:border-brand"
-                        : "border-line text-ink-soft/40 line-through cursor-not-allowed"
+                      : !valid
+                        ? "border-line text-ink-soft/40 line-through cursor-not-allowed"
+                        : inStock
+                          ? "border-line text-ink-soft hover:border-brand"
+                          : "border-line text-ink-soft hover:border-brand opacity-60"
                   }`}
                 >
                   {value}

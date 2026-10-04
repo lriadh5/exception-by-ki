@@ -35,6 +35,8 @@ export type ProductVariant = {
   /** Units in stock. 0 means out of stock regardless of `available`. */
   quantityAvailable: number;
   selectedOptions: SelectedOption[];
+  /** This variant's own representative photo (e.g. the Burgundy cape), when Shopify has one assigned. */
+  image?: ProductImage;
 };
 
 export type Product = {

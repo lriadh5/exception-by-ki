@@ -1,15 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ProductImage } from "@/lib/shopify/types";
 import { ProductSwatch } from "./ProductSwatch";
 
 /**
  * Featured image + thumbnail strip. Falls back to a single ProductSwatch
  * with no strip when there's only one image — most of the catalog.
+ *
+ * `activeImageUrl` lets a parent (the color/option selector) jump the
+ * gallery to a specific photo — e.g. the Burgundy cape's own photo when
+ * "Burgundy" is selected — without owning the gallery's index state itself.
  */
-export function ProductGallery({ images }: { images: ProductImage[] }) {
+export function ProductGallery({
+  images,
+  activeImageUrl,
+}: {
+  images: ProductImage[];
+  activeImageUrl?: string;
+}) {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (!activeImageUrl) return;
+    const index = images.findIndex((image) => image.url === activeImageUrl);
+    if (index !== -1) setActiveIndex(index);
+  }, [activeImageUrl, images]);
+
   const active = images[activeIndex] ?? images[0];
 
   return (

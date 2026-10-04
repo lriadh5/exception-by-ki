@@ -11,6 +11,7 @@ type ShopifyVariantNode = {
   quantityAvailable: number | null;
   selectedOptions: { name: string; value: string }[];
   price: ShopifyMoney;
+  image: { url: string; altText: string | null } | null;
 };
 
 type ShopifyProductNode = {
@@ -66,6 +67,9 @@ export function mapShopifyProduct(node: ShopifyProductNode): Product {
       available: e.node.availableForSale,
       quantityAvailable: e.node.quantityAvailable ?? 0,
       selectedOptions: e.node.selectedOptions,
+      image: e.node.image
+        ? { alt: e.node.image.altText ?? node.title, url: e.node.image.url, ...FALLBACK_GRADIENT }
+        : undefined,
     })),
   };
 }

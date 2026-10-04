@@ -8,7 +8,7 @@ const PRODUCT_FRAGMENT = /* GraphQL */ `
     title
     description
     productType
-    images(first: 6) {
+    images(first: 50) {
       edges {
         node {
           url
@@ -34,6 +34,10 @@ const PRODUCT_FRAGMENT = /* GraphQL */ `
           price {
             amount
             currencyCode
+          }
+          image {
+            url
+            altText
           }
         }
       }

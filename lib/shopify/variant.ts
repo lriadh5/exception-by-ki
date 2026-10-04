@@ -39,6 +39,23 @@ export function isOptionValueAvailable(
   return Boolean(variant && variant.available && variant.quantityAvailable > 0);
 }
 
+/**
+ * True if a real variant exists for this value, regardless of stock —
+ * used to decide whether a swatch is clickable at all. Out-of-stock
+ * colors/sizes should still be browsable (to see photos, read details);
+ * only Add to Cart should be gated on actual stock. A value is only
+ * disabled here when the combination doesn't exist as a variant.
+ */
+export function isOptionValueValid(
+  product: Product,
+  optionName: string,
+  value: string,
+  selections: OptionSelections
+): boolean {
+  const candidate = { ...selections, [optionName]: value };
+  return Boolean(findVariantByOptions(product, candidate));
+}
+
 export const MAX_CART_QUANTITY_PER_LINE = 10;
 
 /**
