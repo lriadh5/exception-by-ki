@@ -545,6 +545,134 @@ export const contentRecords: ContentRecord[] = [
     ],
     publishedAt: "2026-10-21",
   },
+  {
+    slug: "how-to-style-an-embroidered-cape",
+    contentType: "guide",
+    status: "published",
+    title: "How to Style an Embroidered Cape for Eid or a Wedding",
+    metaTitle: "How to Style an Embroidered Cape — Eid & Wedding Outfits",
+    metaDescription:
+      "How to style our Arabic calligraphy embroidered cape for Eid, a wedding, or any dressed-up occasion — what to wear underneath and how to accessorize.",
+    collectionKey: "apparel",
+    relatedProductHandles: ["arabic-calligraphy-embroidered-cape"],
+    primaryKeyword: "how to style an embroidered cape",
+    secondaryKeywords: [
+      "eid outfit cape",
+      "calligraphy cape styling",
+      "what to wear an embroidered cape with",
+    ],
+    searchIntent: "use-case",
+    owningUrl: "/guides/how-to-style-an-embroidered-cape",
+    intro:
+      "The Arabic Calligraphy Embroidered Cape is built to layer, not replace — the open front, stand collar, and cord tie mean it goes over an outfit rather than being the whole outfit. Here's how we'd wear it.",
+    sections: [
+      {
+        heading: "What it layers over",
+        body: "Keep what's underneath simple — a solid-color dress, a tunic and trousers, or a simple abaya all work, since the raised gold embroidery down the front is already the focal point. The cord tie lets you wear it open and loose over an outfit or cinched at the waist for more shape; both read as intentional rather than one being more \"correct\" than the other.",
+      },
+      {
+        heading: "For Eid",
+        body: "Ivory and Terracotta both read as daytime-appropriate for an Eid morning or brunch gathering, while Burgundy carries more weight for an evening family gathering or Eid dinner. The embroidery already does the festive work, so there's no need to layer on additional statement pieces underneath.",
+      },
+      {
+        heading: "For a wedding",
+        body: "As a guest piece, it works over a simple dress for the ceremony or reception without competing with the bride's own look. For a henna night or engagement gathering, Dark Brown or Burgundy tend to photograph well against warmer, low-lit venue lighting.",
+      },
+      {
+        heading: "Accessorizing",
+        body: "The gold cord trim is already a metallic accent, so gold jewelry — earrings, a cuff, a simple necklace — pulls the whole look together rather than introducing a second competing metal tone. Keep shoes and a bag simple; the cape is doing the visual work on its own.",
+      },
+      {
+        heading: "Before you wear it the first time",
+        body: "Check the care instructions on the product page before the first wash or wear — embroidered pieces like this one often need different handling than a plain garment, and we'd rather point you to the specific care details there than guess at them here.",
+      },
+    ],
+    publishedAt: "2026-10-21",
+  },
+  {
+    slug: "embroidered-cape-color-guide",
+    contentType: "guide",
+    status: "published",
+    title: "Which Embroidered Cape Color to Choose",
+    metaTitle: "Embroidered Cape Colors Compared — Ivory, Burgundy, Terracotta, Dark Brown",
+    metaDescription:
+      "All four embroidered cape colors share the same cut and embroidery — here's how Ivory, Burgundy, Terracotta, and Dark Brown actually differ.",
+    collectionKey: "apparel",
+    relatedProductHandles: ["arabic-calligraphy-embroidered-cape"],
+    primaryKeyword: "which embroidered cape color to choose",
+    secondaryKeywords: [
+      "ivory vs burgundy cape",
+      "terracotta embroidered cape",
+      "dark brown embroidered cape",
+    ],
+    searchIntent: "comparison",
+    owningUrl: "/guides/embroidered-cape-color-guide",
+    intro:
+      "All four colors of the Arabic Calligraphy Embroidered Cape ($145) share the exact same cut, embroidery, and gold cord trim — the only real decision is color, which comes down to occasion and what it needs to go over, not quality or detail.",
+    sections: [
+      {
+        heading: "Ivory — the lightest, most versatile option",
+        body: "Ivory pairs with the widest range of colors underneath and reads as appropriate for daytime gatherings, brunches, and lighter-toned venues. It's the safest first choice if you're only buying one and want it to work across the most occasions.",
+      },
+      {
+        heading: "Burgundy — the most formal",
+        body: "Burgundy carries the most visual weight of the four and suits evening events — a wedding reception, an Eid dinner, anywhere the gathering skews more formal. It's also the color that reads richest in photos taken under warm, low light.",
+      },
+      {
+        heading: "Terracotta — a warm neutral that works both ways",
+        body: "Terracotta sits between Ivory and Burgundy in formality — warm enough for an evening event, light enough that it doesn't feel overdressed for daytime. If Ivory feels too plain and Burgundy too formal for how you'd actually use it, this is the middle ground.",
+      },
+      {
+        heading: "Dark Brown — the most understated",
+        body: "Dark Brown grounds a brighter or more patterned outfit underneath rather than competing with it, and tends to read as the least \"occasion-specific\" of the four — it works for a dressed-up gathering without announcing itself as formalwear the way Burgundy does.",
+      },
+      {
+        heading: "If you can only pick one",
+        body: "Ivory or Terracotta are the two we'd point to for a first purchase, since both flex between daytime and evening use. Burgundy and Dark Brown are the better second-piece additions once you know which occasions you're actually dressing for most often.",
+      },
+    ],
+    publishedAt: "2026-10-21",
+  },
+  {
+    slug: "chess-set-vs-tic-tac-toe-gift-guide",
+    contentType: "guide",
+    status: "published",
+    title: "Chess Set vs. Tic-Tac-Toe: Choosing a Wooden Game Gift",
+    metaTitle: "Chess Set vs. Tic-Tac-Toe — Wooden Game Gift Guide",
+    metaDescription:
+      "Choosing between our olive wood chess set and tic-tac-toe board as a gift — by recipient, occasion, and budget, not by which one is \"better.\"",
+    collectionKey: "gifts-games",
+    relatedProductHandles: ["olive-wood-live-edge-chess-set", "tic-tac-toe-board-game"],
+    primaryKeyword: "wooden game gift guide",
+    secondaryKeywords: [
+      "chess set vs tic tac toe gift",
+      "olive wood chess set gift",
+      "wooden board game gift ideas",
+    ],
+    searchIntent: "gift-guide",
+    owningUrl: "/guides/chess-set-vs-tic-tac-toe-gift-guide",
+    intro:
+      "These are the two games in our catalog, and they're genuinely built for different moments — picking between them is about who you're giving it to and what the occasion calls for, not which one is the better-made piece.",
+    sections: [
+      {
+        heading: "Tic-Tac-Toe Board Game — $18",
+        body: "A blue game board with white X and O pieces, priced as a casual, low-commitment gift — a stocking stuffer, a hostess gift, or a coffee-table piece that invites a quick game without asking for a serious time commitment. This is the one for kids, casual gatherings, or anyone you don't know well enough yet to gift something bigger.",
+      },
+      {
+        heading: "Olive Wood Live-Edge Chess Set — $39.99",
+        body: "A live-edge olive wood board with built-in storage drawers holding a full set of wooden pieces — this reads as a keepsake rather than a toy, since no two boards share the same edge grain. It's the choice for someone who actually plays, or for a housewarming or anniversary gift where the piece is meant to sit out as decor between games.",
+      },
+      {
+        heading: "Which one for which recipient",
+        body: "Tic-Tac-Toe suits a quick, universal gift — it doesn't require the recipient to know how to play anything more complex, and the price makes it easy to pair with something else. The chess set is the better pick when you know the recipient plays, or when the gift is meant to double as a piece of decor rather than just a game.",
+      },
+      {
+        heading: "Giving both",
+        body: "At a combined $57.99, the pair covers both a casual game night and a serious one — the tic-tac-toe board for when guests want something quick, the chess set for when two people want to actually sit down and play. Neither needs to be bought alone; they just serve different moments in the same household.",
+      },
+    ],
+    publishedAt: "2026-10-21",
+  },
 ];
 
 export function getAllContent(): ContentRecord[] {
