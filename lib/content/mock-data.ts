@@ -258,6 +258,158 @@ export const contentRecords: ContentRecord[] = [
     ],
     publishedAt: "2026-08-01",
   },
+  {
+    slug: "olive-wood-care-guide",
+    contentType: "guide",
+    status: "published",
+    title: "How to Care for Olive Wood Kitchen Tools",
+    metaTitle: "Olive Wood Utensil Care — How to Clean, Oil & Store",
+    metaDescription:
+      "How to care for olive wood kitchen tools — washing, oiling, drying and storage — so a piece lasts years instead of cracking after a few months.",
+    collectionKey: "olive-wood",
+    relatedProductHandles: [
+      "olive-wood-cooking-spoon",
+      "olive-wood-cutting-board-with-handle",
+      "olive-wood-mortar-and-pestle",
+      "olive-wood-salad-servers",
+      "olive-wood-honey-pot-with-dipper",
+    ],
+    primaryKeyword: "olive wood utensil care",
+    secondaryKeywords: [
+      "how to care for olive wood utensils",
+      "oiling olive wood",
+      "is olive wood dishwasher safe",
+      "olive wood cutting board care",
+    ],
+    searchIntent: "informational",
+    owningUrl: "/guides/olive-wood-care-guide",
+    intro:
+      "Olive wood doesn't need much, but the little it does need is non-negotiable — skip it and a piece that should last decades starts cracking within a season. None of this is complicated; it's mostly about what to avoid rather than what to do.",
+    sections: [
+      {
+        heading: "Hand wash only, and don't let it soak",
+        body: "Wash with warm water and a mild dish soap, then dry it immediately — never leave an olive wood piece sitting in a sink full of water or run it through the dishwasher. Standing water is what actually damages wood, not the occasional contact with water itself. A cutting board, mortar and pestle, or honey pot that soaks for even twenty minutes can start to warp or split at the grain.",
+      },
+      {
+        heading: "Dry it standing up, not flat",
+        body: "Towel off the surface water, then stand the piece upright or lean it against something so air reaches both sides evenly. A cutting board or serving dish left flat on a towel dries unevenly — one side stays damp longer than the other, which is exactly the kind of uneven moisture that causes warping over time.",
+      },
+      {
+        heading: "Oil it monthly, more often if it's in daily use",
+        body: "Condition with food-safe mineral oil (not olive oil or vegetable oil, which go rancid) — rub a thin coat in with a cloth, let it sit for a few minutes, then wipe off any excess. Do this about once a month for a spoon or salad servers that see occasional use, and closer to every one to two weeks for a cutting board or mortar and pestle that's in daily rotation. The oil is what keeps the grain from drying out and cracking, not a cosmetic step.",
+      },
+      {
+        heading: "A few stains and marks are normal, not a flaw",
+        body: "Olive wood has a naturally tight grain that resists odor and staining better than most woods, but turmeric, beet juice, and similar high-pigment ingredients will still leave a trace over time — that's normal, not a defect. A light sanding with fine-grit sandpaper followed by a fresh coat of oil brings most surface marks back close to new, on boards and bowls alike.",
+      },
+      {
+        heading: "What shortens a piece's life",
+        body: "Three things cause most of the damage we hear about: the dishwasher, prolonged soaking, and letting a piece sit bone-dry for months without oiling. Skip all three and there's no real reason a cutting board or spoon from this collection shouldn't outlast most of what's in a kitchen drawer today.",
+      },
+    ],
+    publishedAt: "2026-10-21",
+  },
+  {
+    slug: "is-olive-wood-safe-for-non-stick-pans",
+    contentType: "guide",
+    status: "published",
+    title: "Is Olive Wood Safe for Non-Stick Pans?",
+    metaTitle: "Is Olive Wood Safe for Non-Stick Pans? — Straight Answer",
+    metaDescription:
+      "Yes — olive wood is safe for non-stick cookware. Here's why wood utensils don't scratch coated pans, and which pieces from our collection work best.",
+    collectionKey: "olive-wood",
+    relatedProductHandles: [
+      "olive-wood-cooking-spoon",
+      "olive-wood-flat-spatula",
+      "olive-wood-ladle",
+      "olive-wood-slim-stirring-spoon",
+    ],
+    primaryKeyword: "is olive wood safe for non-stick pans",
+    secondaryKeywords: [
+      "olive wood utensils non-stick",
+      "wood utensils vs metal non-stick",
+      "best utensils for non-stick cookware",
+    ],
+    searchIntent: "informational",
+    owningUrl: "/guides/is-olive-wood-safe-for-non-stick-pans",
+    intro:
+      "Short answer: yes. Olive wood is one of the safest materials to use on a non-stick pan — it's the reason wood and silicone, not metal, are what most non-stick cookware manufacturers recommend in the first place. Here's the actual reasoning, not just the answer.",
+    sections: [
+      {
+        heading: "Why wood doesn't scratch a coated surface",
+        body: "Non-stick coatings scratch when something harder than the coating drags across it — that's metal utensils, not wood. Olive wood is dense but still far softer than the ceramic or PTFE coating on a non-stick pan, so normal stirring, flipping, and scraping don't abrade the surface the way a metal spoon or spatula eventually will.",
+      },
+      {
+        heading: "Which piece for which job",
+        body: "The Olive Wood Flat Spatula ($14.99) is built for turning and scraping in a shallow pan — its flat edge gets into corners a rounded spoon can't. The Olive Wood Cooking Spoon ($14.99) handles general stirring and mixing. For sauces, soups, or anything liquid, the Olive Wood Ladle ($14.99) has the bowl depth a flat spoon doesn't. The Olive Wood Slim Stirring Spoon ($12.99) is the one we'd reach for in a narrow saucepan, where a wider spoon can't comfortably reach the bottom edge.",
+      },
+      {
+        heading: "One real caveat: heat, not scratching",
+        body: "Wood's limitation with non-stick cookware isn't scratching — it's prolonged direct contact with a hot pan surface for extended periods, which can scorch the tip over time the same way it would any wooden utensil. Lift it off the pan between stirs rather than resting it directly on the hot surface for long stretches, and it'll hold up indefinitely.",
+      },
+      {
+        heading: "The bottom line",
+        body: "If a utensil is being chosen specifically to protect a non-stick pan's coating, wood is a genuinely good choice — not a compromise. Metal is the thing to avoid; wood and silicone both do the job safely, and wood has the added benefit of not conducting heat to the handle the way metal does.",
+      },
+    ],
+    publishedAt: "2026-10-21",
+  },
+  {
+    slug: "olive-wood-kitchen-essentials",
+    contentType: "guide",
+    status: "published",
+    title: "Olive Wood Kitchen Essentials: Where to Start",
+    metaTitle: "Olive Wood Kitchen Essentials — Where to Start Buying",
+    metaDescription:
+      "Which olive wood kitchen pieces to buy first — cooking tools, prep and serving, or a single piece — a practical starting-point guide by use case.",
+    collectionKey: "olive-wood",
+    relatedProductHandles: [
+      "olive-wood-cooking-spoon",
+      "olive-wood-flat-spatula",
+      "olive-wood-cutting-board-with-handle",
+      "olive-wood-salad-servers",
+      "olive-wood-mortar-and-pestle",
+      "olive-wood-spoon-rest",
+      "olive-wood-honey-pot-with-dipper",
+    ],
+    primaryKeyword: "olive wood kitchen essentials",
+    secondaryKeywords: [
+      "best olive wood kitchen set",
+      "olive wood kitchen starter set",
+      "what olive wood kitchen tools do I need",
+    ],
+    searchIntent: "buying-guide",
+    owningUrl: "/guides/olive-wood-kitchen-essentials",
+    intro:
+      "With more than twenty different olive wood pieces in the collection, the real question isn't which one is best — it's which one to buy first. Here's how we'd think through it, organized by what you actually do in a kitchen rather than by product type.",
+    sections: [
+      {
+        heading: "If you're buying one piece to start",
+        body: "The Olive Wood Cooking Spoon ($14.99) is the single most useful piece in the collection — it's the one tool that gets reached for daily, for everything from stirring a pot to tasting a sauce. If the budget only stretches to one piece, this is it.",
+      },
+      {
+        heading: "For everyday cooking",
+        body: "Beyond the cooking spoon, the Olive Wood Flat Spatula ($14.99) covers turning and scraping in a pan the spoon can't do well. Together, those two cover most stovetop cooking without needing anything else — add a ladle later once soups and sauces come up often enough to justify it.",
+      },
+      {
+        heading: "For prep and cutting",
+        body: "The Olive Wood Cutting Board with Handle ($28.00) is the natural second purchase — a board that doubles as a small serving board thanks to the handle, so it earns its cabinet space two ways instead of one. Pair it with the Olive Wood Mortar and Pestle ($28.00) once you're regularly crushing garlic, herbs, or spices rather than relying on a knife and a cutting board for that job.",
+      },
+      {
+        heading: "For serving at the table",
+        body: "The Olive Wood Salad Servers ($24.99) are the easiest serving upgrade — a matching spoon and fork that look intentional on a table instead of mismatched kitchen tools pressed into service. The Olive Wood Honey Pot with Dipper ($29.99) is a smaller, gift-friendly addition for anyone who already has the basics covered and wants something that isn't strictly necessary but gets used anyway.",
+      },
+      {
+        heading: "The one small piece worth adding early",
+        body: "The Olive Wood Spoon Rest ($16.99) is easy to skip and easy to regret skipping — it's a small purchase that immediately stops a counter from collecting sauce and oil marks from a resting spoon. We'd add it in the same order as the first spoon, not as an afterthought.",
+      },
+      {
+        heading: "Building it over time",
+        body: "None of this needs to happen in one order or one purchase. Most kitchens we've seen build an olive wood collection start with one or two cooking tools, add a cutting board once those get regular use, and round it out with serving pieces as gatherings come up. Treat it the same way as any other kitchen collection — add a piece when there's a real use for it, not all at once.",
+      },
+    ],
+    publishedAt: "2026-10-21",
+  },
 ];
 
 export function getAllContent(): ContentRecord[] {
