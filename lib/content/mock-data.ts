@@ -410,6 +410,141 @@ export const contentRecords: ContentRecord[] = [
     ],
     publishedAt: "2026-10-21",
   },
+  {
+    slug: "how-to-style-a-vase-without-flowers",
+    contentType: "guide",
+    status: "published",
+    title: "How to Style a Ceramic Vase Without Flowers",
+    metaTitle: "Vase Decor Without Flowers — Styling Ideas That Work",
+    metaDescription:
+      "A vase doesn't need flowers to earn its spot on a shelf. Practical styling ideas for a ceramic jug or amphora vase, empty or filled.",
+    collectionKey: "home-decor",
+    relatedProductHandles: ["sage-green-ceramic-jug-vase", "white-ribbed-ceramic-amphora-vase"],
+    primaryKeyword: "vase decor without flowers",
+    secondaryKeywords: [
+      "how to style a vase",
+      "empty vase decor ideas",
+      "ceramic vase styling",
+    ],
+    searchIntent: "use-case",
+    owningUrl: "/guides/how-to-style-a-vase-without-flowers",
+    intro:
+      "A vase that only looks finished with flowers in it is a vase that looks bare most of the year, since fresh flowers don't last and not everyone wants to keep buying them. The shape and finish of a good ceramic vase are doing real decorative work on their own — here's how to let them.",
+    sections: [
+      {
+        heading: "Let the shape do the work",
+        body: "The White Ribbed Ceramic Amphora Vase ($55) has a classic two-handle silhouette and a textured rib pattern that reads as sculptural on its own, with nothing in it. Set it on a shelf or console table empty and it's still the focal point — adding stems only competes with a shape that doesn't need help.",
+      },
+      {
+        heading: "Group by height and finish, not by matching",
+        body: "The Sage Green Ceramic Jug Vase ($45) has a single handle and a rounder, lower profile than the amphora — grouped together, the two create natural height variation without looking like a matched set, which is more interesting than a pair of identical vases lined up evenly.",
+      },
+      {
+        heading: "A matte finish grounds a busy shelf",
+        body: "Both of these are matte, not glossy — sage and white ribbed respectively — which means they read as calm anchors next to shinier or more detailed objects nearby, instead of adding more visual noise to a shelf that already has books, frames, or other decor on it.",
+      },
+      {
+        heading: "When to add something, and what",
+        body: "If an empty vase feels like it's missing something, dried branches, pampas grass, or a single stem of eucalyptus give it presence without the maintenance of fresh flowers — and without wilting into something that needs replacing every week. Treat flowers as an occasional addition, not a requirement.",
+      },
+      {
+        heading: "Where these actually work",
+        body: "A console table or entryway shelf benefits from the amphora's height; the jug vase's smaller footprint fits a bookshelf, a bathroom counter, or a nightstand where a taller piece wouldn't. Neither needs a dedicated \"vase spot\" — they work wherever a room needs one considered object instead of several small ones.",
+      },
+    ],
+    publishedAt: "2026-10-21",
+  },
+  {
+    slug: "decorative-dome-styling-ideas",
+    contentType: "guide",
+    status: "published",
+    title: "Decorative Dome Covers: Styling Ideas Beyond Ramadan",
+    metaTitle: "Decorative Dome Cover Styling Ideas for Any Season",
+    metaDescription:
+      "A covered dome dish isn't only for Ramadan. Styling ideas for using a crescent dome as everyday home decor, plus pierced vs. solid lid compared.",
+    collectionKey: "home-decor",
+    relatedProductHandles: [
+      "cream-metal-crescent-dome-pierced-lid",
+      "cream-metal-crescent-dome-solid-lid",
+    ],
+    primaryKeyword: "decorative dome cover styling",
+    secondaryKeywords: [
+      "covered dish decor ideas",
+      "metal dome decor",
+      "crescent dome home decor",
+    ],
+    searchIntent: "use-case",
+    owningUrl: "/guides/decorative-dome-styling-ideas",
+    intro:
+      "A domed cover tends to come out for Ramadan and go back in the cabinet the rest of the year, which undersells it — a covered dish is a genuinely useful piece of decor in any season, for reasons that have nothing to do with what's under the lid.",
+    sections: [
+      {
+        heading: "Pierced vs. solid lid — which to pick",
+        body: "The Cream Metal Crescent Dome with Pierced Lid ($65) has a laser-cut floral pattern that lets light and scent move through — pick this one if it's going over something you want a hint of from across the room, like bakhoor or potpourri. The Cream Metal Crescent Dome with Solid Lid ($75) fully conceals what's underneath, which is the one to choose for a catch-all dish or anything you'd rather keep out of sight until it's lifted.",
+      },
+      {
+        heading: "What's underneath doesn't have to be food",
+        body: "Outside of serving sweets and dates, a domed cover works as a jewelry catch-all on a dresser, a soap dish cover in a guest bathroom, or a candy dish that stays dust-free between visitors. The crescent finial and tassel detailing read as intentional decor whether or not there's anything edible underneath.",
+      },
+      {
+        heading: "Placement beyond the dining table",
+        body: "A vanity, an entryway console, or a bedside table all work — anywhere a small covered dish adds a finished detail without taking up much footprint. The lift-away lid is part of the appeal in any of these spots: it turns a static object into something with a small moment of reveal.",
+      },
+      {
+        heading: "Pairing it with the rest of a room",
+        body: "The cream base and gold-toned crescent finial pair naturally with warm metals and neutral palettes already in a room — it doesn't need to match other Ramadan-specific pieces to look intentional sitting on a shelf in July.",
+      },
+    ],
+    publishedAt: "2026-10-21",
+  },
+  {
+    slug: "pillowcase-vs-pillow-cover",
+    contentType: "guide",
+    status: "published",
+    title: "Pillowcase vs. Pillow Cover: What's the Difference",
+    metaTitle: "Pillowcase vs. Pillow Cover — What's the Difference?",
+    metaDescription:
+      "Pillowcase and pillow cover aren't the same thing. A clear comparison of what each one is for, so you order the right one the first time.",
+    collectionKey: "pillows-textiles",
+    relatedProductHandles: [
+      "arabic-calligraphy-pillowcase",
+      "velvet-arabic-calligraphy-pillow-cover",
+      "cotton-paisley-fringed-throw",
+    ],
+    primaryKeyword: "pillowcase vs pillow cover",
+    secondaryKeywords: [
+      "difference between pillowcase and pillow cover",
+      "decorative pillow cover vs pillowcase",
+      "arabic calligraphy pillow",
+    ],
+    searchIntent: "comparison",
+    owningUrl: "/guides/pillowcase-vs-pillow-cover",
+    intro:
+      "These two get used interchangeably in everyday conversation, but they're genuinely different products built for different jobs — and ordering the wrong one means a piece that doesn't fit what you actually needed it for.",
+    sections: [
+      {
+        heading: "What a pillowcase actually is",
+        body: "A pillowcase is an envelope-style sleeve sized for a sleeping pillow — it goes on your bed, gets washed often, and is meant to be functional bedding first. The Arabic Calligraphy Pillowcase ($39) has an embroidered calligraphy border and comes in Sage, Emerald, or Ivory — it's built for regular use and regular washing, the same as any other pillowcase.",
+      },
+      {
+        heading: "What a pillow cover actually is",
+        body: "A pillow cover is a removable case for a decorative throw cushion — it's sized to fit a square cushion insert, not a sleeping pillow, and its job is to look good on a sofa, bed, or accent chair rather than to be slept on. The Velvet Arabic Calligraphy Pillow Cover comes in eight colors and is built as an accent piece, not bedding.",
+      },
+      {
+        heading: "Which one for which purpose",
+        body: "If you're shopping for your own bed and want something you'll sleep on and wash weekly, that's the pillowcase. If you're adding a decorative accent to a sofa, bench, or bed as styling rather than function, that's the pillow cover. The embroidered calligraphy detail looks similar in photos, which is exactly why the two get confused before checkout.",
+      },
+      {
+        heading: "They layer well together",
+        body: "A bed doesn't have to pick one or the other — a calligraphy pillowcase on the sleeping pillows underneath, with a velvet calligraphy cover on a decorative accent pillow on top, reads as a considered set without actually being sold as one. The Cotton Paisley Fringed Throw ($65) layers over the foot of the bed or a sofa back to round out the same look.",
+      },
+      {
+        heading: "One thing to check before you order",
+        body: "Pricing and availability are confirmed for the pillowcase; the velvet pillow cover's pricing is still being finalized on our end, so double-check the current price on its product page before adding it to an order alongside the pillowcase.",
+      },
+    ],
+    publishedAt: "2026-10-21",
+  },
 ];
 
 export function getAllContent(): ContentRecord[] {
