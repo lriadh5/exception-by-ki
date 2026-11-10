@@ -2,6 +2,7 @@
 // Update here if collections are renamed/added/removed in Shopify — this
 // drives both the header nav and the footer "Shop" column.
 export const primaryNav = [
+  { title: "Shop All", href: "/shop-all" },
   { title: "Cookware", href: "/collections/cookware" },
   { title: "Olive Wood", href: "/collections/olive-wood" },
   { title: "Serveware & Trays", href: "/collections/serveware-trays" },
