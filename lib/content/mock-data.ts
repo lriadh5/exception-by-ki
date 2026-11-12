@@ -673,6 +673,46 @@ export const contentRecords: ContentRecord[] = [
     ],
     publishedAt: "2026-10-21",
   },
+  {
+    slug: "how-to-clean-a-hammered-casserole",
+    contentType: "guide",
+    status: "published",
+    title: "How to Clean a Hammered Stainless Steel Casserole",
+    metaTitle: "How to Clean a Hammered Stainless Steel Casserole",
+    metaDescription:
+      "The hammered texture traps food and water differently than a flat pan. Here's how to actually clean the dimples without scratching the finish.",
+    collectionKey: "cookware",
+    relatedProductHandles: ["hand-hammered-silver-casserole", "hammered-gold-casserole"],
+    primaryKeyword: "how to clean a hammered stainless steel casserole",
+    secondaryKeywords: [
+      "cleaning hammered cookware",
+      "hammered pan care",
+      "hammered stainless steel care",
+    ],
+    searchIntent: "informational",
+    owningUrl: "/guides/how-to-clean-a-hammered-casserole",
+    intro:
+      "A flat pan and a hammered one don't clean the same way. The dimpled surface that gives a hammered casserole its look also gives food and rinse water somewhere to sit that a flat pan doesn't have — so a quick wipe that works on a smooth pot often leaves residue behind in the dimples. Here's what actually gets it clean without scratching the finish.",
+    sections: [
+      {
+        heading: "The basic wash",
+        body: "Let the casserole cool before washing it — cold water on a hot pan can warp stainless steel. Wash by hand with warm water, a mild dish soap, and a soft sponge, working in small circles so the sponge flexes into each dimple rather than skating across the tops of them. Rinse thoroughly, then dry it immediately with a soft cloth rather than letting it air-dry.",
+      },
+      {
+        heading: "Getting food out of the dimples specifically",
+        body: "For anything stuck in the hammered pattern, a soft-bristled brush (a vegetable brush works well) reaches into the dimples better than a sponge. If food is baked on, skip scrubbing it dry — fill the casserole with warm soapy water and let it sit for 10–15 minutes first, or deglaze it on low heat while it's still slightly warm. Either loosens residue enough that it wipes out of the texture instead of needing force.",
+      },
+      {
+        heading: "What to avoid",
+        body: "Skip steel wool, abrasive pads, and anything gritty — on a flat pan they just dull the surface, but on a hammered one they can wear down the raised edges of the pattern faster than the rest of the metal, which shows up as uneven shine over time. For the gold casserole specifically, this matters more: the finish is a gold tone over the same stainless base, and an abrasive cleaner will thin it faster on those raised edges than anywhere else.",
+      },
+      {
+        heading: "Keeping the shine",
+        body: "Water left sitting in the dimples after a rinse is what usually causes the spotting people notice on hammered cookware — drying it right away, not just setting it on a rack, is most of the fix. A light wipe with a dry microfiber cloth after each wash keeps both finishes looking like they did on day one.",
+      },
+    ],
+    publishedAt: "2026-11-12",
+  },
 ];
 
 export function getAllContent(): ContentRecord[] {
