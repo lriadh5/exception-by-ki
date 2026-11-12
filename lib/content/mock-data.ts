@@ -105,15 +105,15 @@ export const contentRecords: ContentRecord[] = [
     sections: [
       {
         heading: "Finish and everyday care",
-        body: "The silver is polished or brushed hammered stainless steel — hand wash and dry it promptly, and it holds up to regular rotation in a working kitchen. The gold is gold-plated over the same hammered stainless steel, which means the same hand-wash-only rule but with one more caveat: skip abrasive cleaners entirely, since they'll wear the plating faster than the base metal underneath. If it's going into weekly use rather than mostly for guests, the silver is the lower-maintenance choice.",
+        body: "Both are hand-hammered stainless steel — the silver keeps its natural polished finish, the gold adds a warm gold-toned finish over the same stainless base. Both get the same simple care: hand wash with warm, soapy water, dry it promptly, and skip abrasive pads, which can dull either finish over time. Neither one is more work day-to-day than the other.",
       },
       {
         heading: "Sizing and options",
-        body: "The silver casserole comes in two sizes (8 quart and 10 quart) and two finishes (polished or brushed), four combinations in total, priced from $245 for the 8 quart polished up to $315 for the 10 quart brushed. The gold casserole is offered in a single 10 quart size at $349 — no size or finish choice to make, just the one showpiece version.",
+        body: "Both the silver and gold casseroles are offered in the same two sizes — 12 inches ($128) and 13 inches ($138) — so sizing isn't a factor in choosing between them. Pick whichever finish suits your kitchen; the size options are identical either way.",
       },
       {
         heading: "Where each one earns its place",
-        body: "The silver reads as everyday luxury — it's the one we'd put into regular stovetop-to-table rotation. The gold is the one that changes the mood of a table on its own; it's priced and finished like a piece you bring out rather than reach for nightly. Several of our customers own one of each for exactly that reason.",
+        body: "The silver reads as everyday luxury — it's the one we'd put into regular stovetop-to-table rotation. The gold is the one that changes the mood of a table on its own, a piece you bring out for guests rather than reach for nightly. Several of our customers own one of each for exactly that reason.",
       },
     ],
     publishedAt: "2026-08-01",
