@@ -26,7 +26,7 @@ export function ProductDetail({ product, guides }: { product: Product; guides: C
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <ProductGallery images={product.images} activeImageUrl={variant?.image?.url} />
+      <ProductGallery images={product.images} activeImage={variant?.image} />
 
       <div>
         <div className="flex items-start justify-between gap-4 mb-4">

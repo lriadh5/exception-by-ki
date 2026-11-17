@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { ProductImage } from "@/lib/shopify/types";
 import { ProductSwatch } from "./ProductSwatch";
 
@@ -8,26 +8,36 @@ import { ProductSwatch } from "./ProductSwatch";
  * Featured image + thumbnail strip. Falls back to a single ProductSwatch
  * with no strip when there's only one image — most of the catalog.
  *
- * `activeImageUrl` lets a parent (the color/option selector) jump the
- * gallery to a specific photo — e.g. the Burgundy cape's own photo when
- * "Burgundy" is selected — without owning the gallery's index state itself.
+ * `activeImage` lets a parent (the color/option selector) jump the gallery
+ * to a variant's own photo — e.g. the Burgundy cape's own photo when
+ * "Burgundy" is selected — by passing that photo directly. The gallery
+ * renders it as-is; it does not need to also appear in `images` or match
+ * any image there by URL. Matching by URL string across two separate API
+ * responses (the product's gallery and a variant's own image) isn't
+ * guaranteed to produce byte-identical strings, so this component never
+ * relies on that — the caller's object is the source of truth.
  */
 export function ProductGallery({
   images,
-  activeImageUrl,
+  activeImage,
 }: {
   images: ProductImage[];
-  activeImageUrl?: string;
+  activeImage?: ProductImage;
 }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [manualImage, setManualImage] = useState<ProductImage | null>(null);
+  const [prevActiveImage, setPrevActiveImage] = useState(activeImage);
 
-  useEffect(() => {
-    if (!activeImageUrl) return;
-    const index = images.findIndex((image) => image.url === activeImageUrl);
-    if (index !== -1) setActiveIndex(index);
-  }, [activeImageUrl, images]);
+  // A new variant selection always wins over a prior manual thumbnail
+  // click — otherwise picking a design after browsing thumbnails would
+  // leave the gallery stuck on whatever thumbnail was last clicked. Reset
+  // during render (React's documented pattern for this) rather than in an
+  // effect, which would cause an extra render pass.
+  if (activeImage !== prevActiveImage) {
+    setPrevActiveImage(activeImage);
+    setManualImage(null);
+  }
 
-  const active = images[activeIndex] ?? images[0];
+  const active = manualImage ?? activeImage ?? images[0];
 
   return (
     <div>
@@ -35,21 +45,24 @@ export function ProductGallery({
 
       {images.length > 1 && (
         <div className="mt-3 grid grid-cols-5 gap-2" role="tablist" aria-label="Product images">
-          {images.map((image, i) => (
-            <button
-              key={image.url ?? i}
-              type="button"
-              role="tab"
-              aria-selected={i === activeIndex}
-              aria-label={`Show image ${i + 1} of ${images.length}`}
-              onClick={() => setActiveIndex(i)}
-              className={`rounded-sm overflow-hidden ring-1 transition-all ${
-                i === activeIndex ? "ring-2 ring-brand" : "ring-line hover:ring-brand-light"
-              }`}
-            >
-              <ProductSwatch image={image} className="aspect-square" showLabel={false} sizes="20vw" />
-            </button>
-          ))}
+          {images.map((image, i) => {
+            const isActive = active.url ? image.url === active.url : image === active;
+            return (
+              <button
+                key={image.url ?? i}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                aria-label={`Show image ${i + 1} of ${images.length}`}
+                onClick={() => setManualImage(image)}
+                className={`rounded-sm overflow-hidden ring-1 transition-all ${
+                  isActive ? "ring-2 ring-brand" : "ring-line hover:ring-brand-light"
+                }`}
+              >
+                <ProductSwatch image={image} className="aspect-square" showLabel={false} sizes="20vw" />
+              </button>
+            );
+          })}
         </div>
       )}
     </div>
