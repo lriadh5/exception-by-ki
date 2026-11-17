@@ -22,8 +22,8 @@ export default function NotFound() {
           </Link>
         </li>
         <li>
-          <Link href="/collections/ramadan-eid" className="underline">
-            Ramadan &amp; Eid
+          <Link href="/collections/holiday-hostess-gifts" className="underline">
+            Holiday &amp; Hostess Gifts
           </Link>
         </li>
         <li>

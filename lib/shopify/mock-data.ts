@@ -36,9 +36,9 @@ export const collections: Collection[] = [
     description: "Quiet, elevated pieces for the rooms beyond the kitchen.",
   },
   {
-    handle: "ramadan-eid",
-    title: "Ramadan & Eid",
-    description: "Seasonal pieces for iftar tables, gifting, and gathering.",
+    handle: "holiday-hostess-gifts",
+    title: "Holiday & Hostess Gifts",
+    description: "Seasonal pieces for hosting, gifting, and gathering.",
   },
   {
     handle: "gift-sets",
@@ -165,7 +165,7 @@ export const products: Product[] = [
     title: "Two-Tier Crystal Blossom Dessert Stand",
     description:
       "A two-tier mirror-polished dessert stand joined by a crystal blossom stem and balanced on a sculpted pedestal — built to hold dates and sweets for a crowd.",
-    collectionHandles: ["kitchen-accessories", "home-decor", "ramadan-eid", "gift-sets"],
+    collectionHandles: ["kitchen-accessories", "home-decor", "holiday-hostess-gifts", "gift-sets"],
     images: [
       {
         alt: "Two-tier mirror-polished dessert stand with a crystal flower stem connecting the tiers, on a cream backdrop",
@@ -188,7 +188,7 @@ export const products: Product[] = [
     ],
     material: "Mirror-Polished Stainless Steel, Crystal",
     careInstructions: "Hand wash. Dry immediately to preserve the polish.",
-    occasion: ["Hosting", "Wedding Gift", "Ramadan", "Eid"],
+    occasion: ["Hosting", "Wedding Gift", "Holiday", "Hostess"],
     options: [{ name: "Size", values: ["Two-Tier"] }],
     variants: [
       {
@@ -207,7 +207,7 @@ export const products: Product[] = [
     title: "Crystal Blossom Vanity Set",
     description:
       "A crystal blossom vanity set — stemmed dish, covered jar, and tray — finished with hand-set enamel blossoms along a brass vine. The stemmed dish doubles as a bakhoor burner; the covered jar keeps bakhoor or trinkets close at hand.",
-    collectionHandles: ["home-decor", "gift-sets", "ramadan-eid"],
+    collectionHandles: ["home-decor", "gift-sets", "holiday-hostess-gifts"],
     images: [
       {
         alt: "Mirror-polished stemmed goblet and covered jar with hand-set crystal blossom accents, arranged on a matching rectangular tray",
@@ -327,7 +327,7 @@ export const products: Product[] = [
     title: "Hand-Pierced Silver Sweets Box",
     description:
       "A hand-hammered silver dome, laser-cut in flowing calligraphy and topped with a beaded tassel, lifts away to reveal a cream ceramic box beneath — built to present ma'amoul and other sweets at the table, not just store them.",
-    collectionHandles: ["ramadan-eid", "home-decor", "gift-sets"],
+    collectionHandles: ["holiday-hostess-gifts", "home-decor", "gift-sets"],
     images: [
       {
         alt: "Hammered silver dome with a laser-cut calligraphy pattern and cream ceramic base, finished with a beaded tassel",
@@ -344,7 +344,7 @@ export const products: Product[] = [
     ],
     material: "Hammered Stainless Steel, Ceramic",
     careInstructions: "Wipe clean with a dry cloth.",
-    occasion: ["Ramadan", "Eid", "Housewarming"],
+    occasion: ["Holiday", "Hostess", "Housewarming"],
     options: [{ name: "Size", values: ["Standard"] }],
     variants: [
       {
@@ -363,7 +363,7 @@ export const products: Product[] = [
     title: "Taupe Calligraphy Sweets Box",
     description:
       "A powder-coated dome in matte taupe, pierced in an open calligraphy pattern and topped with a crescent moon finial and tassel — a softer-toned companion to the silver sweets box, built the same way.",
-    collectionHandles: ["ramadan-eid", "home-decor", "gift-sets"],
+    collectionHandles: ["holiday-hostess-gifts", "home-decor", "gift-sets"],
     images: [
       {
         alt: "Taupe powder-coated bakhoor dome with an open calligraphy cutout pattern and a crescent moon tassel finial",
@@ -374,7 +374,7 @@ export const products: Product[] = [
     ],
     material: "Powder-Coated Steel",
     careInstructions: "Wipe clean with a dry cloth.",
-    occasion: ["Ramadan", "Eid"],
+    occasion: ["Holiday", "Hostess"],
     options: [{ name: "Size", values: ["Standard"] }],
     variants: [
       {
@@ -393,7 +393,7 @@ export const products: Product[] = [
     title: "Calligraphy Nesting Bowls, Set of Three",
     description:
       "Three hand-pierced stainless bowls in graduated sizes, each rim cut in flowing Arabic calligraphy and finished with a gold ring handle — nest them for storage or spread them across the table for nuts, dates, and sweets.",
-    collectionHandles: ["ramadan-eid", "home-decor", "gift-sets"],
+    collectionHandles: ["holiday-hostess-gifts", "home-decor", "gift-sets"],
     images: [
       {
         alt: "Three nested stainless steel bowls with laser-cut Arabic calligraphy rims and gold ring handles",
@@ -410,7 +410,7 @@ export const products: Product[] = [
     ],
     material: "Stainless Steel, Brass",
     careInstructions: "Hand wash. Dry immediately to preserve the polish.",
-    occasion: ["Ramadan", "Eid", "Hosting", "Housewarming"],
+    occasion: ["Holiday", "Hostess", "Hosting", "Housewarming"],
     options: [{ name: "Set", values: ["3-Piece"] }],
     variants: [
       {

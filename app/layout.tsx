@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | Exception by K&I",
   },
   description:
-    "Heirloom-grade cookware, kitchen accessories, and home décor — including Ramadan & Eid pieces and curated gift sets.",
+    "Heirloom-grade cookware, kitchen accessories, and home décor — including Holiday & Hostess Gifts and curated gift sets.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

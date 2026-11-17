@@ -49,7 +49,7 @@ don't pad it.
 3. **Materials & dimensions**: material, finish, dimensions and capacity per size.
 4. **What's included**: piece count and every item.
 5. **Ideal for**: real uses and occasions, in plain language (this is where
-   "iftar table", "Eid hosting" and "housewarming gift" belong, once each and
+   "holiday table", "hostess gift" and "housewarming gift" belong, once each and
    only if true).
 6. **Care**: exact instructions, including dishwasher and oven use only if confirmed.
 7. **Shipping**: one line that links to the shipping policy; no invented delivery times.
@@ -82,7 +82,7 @@ by the storefront.
 | `specs.included_items` | list of text | product | Stemmed dish; covered jar; tray |
 | `specs.primary_use` | single line text | product | Serving dish |
 | `specs.secondary_uses` | list of text | product | Fruit bowl; dates and sweets |
-| `specs.occasions` | list of text | product | Everyday; Hosting; Ramadan; Eid; Housewarming |
+| `specs.occasions` | list of text | product | Everyday; Hosting; Holiday; Hostess; Housewarming |
 | `specs.gift_suitable` | boolean | product | true |
 | `specs.care_instructions` | multi-line text | product | Hand wash… |
 | `specs.dishwasher_safe` | boolean | product | *(only if confirmed)* |
@@ -109,8 +109,8 @@ there is a genuine earlier selling price).
 ## 7. Images
 
 - **Minimum:** a clean hero image, a second angle, and a close-up of detail or
-  texture. **Recommended:** a real in-use lifestyle photo (for Ramadan pieces, a
-  real iftar or dates setting, but only with genuine photography).
+  texture. **Recommended:** a real in-use lifestyle photo (for holiday pieces, a
+  real hosting or gathering setting, but only with genuine photography).
 - Square or 4:5 ratio, at least 2048 px on the long side, no text overlays on
   catalog images.
 - **Alt text**: describe what is actually visible in *that* image, in one
@@ -120,7 +120,7 @@ there is a genuine earlier selling price).
 ## 8. Tags and collections
 
 - Tags drive automated collections, so use a controlled vocabulary only:
-  `occasion:ramadan-eid`, `occasion:wedding`, `occasion:housewarming`,
+  `occasion:holiday-hostess`, `occasion:wedding`, `occasion:housewarming`,
   `use:hosting`, `use:everyday`, `gift`. Remove free-form duplicates.
 - Collections are **automated** (tag or category rules), so new products land
   in the right place automatically.

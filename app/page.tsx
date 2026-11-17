@@ -5,10 +5,10 @@ import { ProductCard } from "@/components/commerce/ProductCard";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export default async function HomePage() {
-  const [collections, featured, ramadanGuides] = await Promise.all([
+  const [collections, featured, holidayGuides] = await Promise.all([
     listCollections(),
     getFeaturedProducts(4),
-    getGuidesForCollection("ramadan-eid"),
+    getGuidesForCollection("holiday-hostess-gifts"),
   ]);
 
   return (
@@ -80,21 +80,21 @@ export default async function HomePage() {
 
       <section className="bg-paper-dim">
         <FadeIn className="mx-auto max-w-3xl px-6 py-20 text-center block">
-          <h2 className="font-serif text-2xl mb-4">Ramadan &amp; Eid, considered</h2>
+          <h2 className="font-serif text-2xl mb-4">Holiday &amp; Hostess Gifts, considered</h2>
           <p className="text-ink-soft">
             Serving pieces and gifts for the season of gathering — from
             bakhoor burners to dessert stands built for a full table.
           </p>
           <Link
-            href="/collections/ramadan-eid"
+            href="/collections/holiday-hostess-gifts"
             className="inline-block mt-8 border border-brand px-8 py-3 text-sm tracking-wide transition-all duration-300 hover:bg-brand hover:text-paper hover:-translate-y-0.5"
           >
-            Shop Ramadan &amp; Eid
+            Shop Holiday &amp; Hostess Gifts
           </Link>
-          {ramadanGuides.length > 0 && (
+          {holidayGuides.length > 0 && (
             <p className="mt-4">
-              <Link href={`/guides/${ramadanGuides[0].slug}`} className="text-sm text-brand-dark underline">
-                Read our styling guide: {ramadanGuides[0].title}
+              <Link href={`/guides/${holidayGuides[0].slug}`} className="text-sm text-brand-dark underline">
+                Read our styling guide: {holidayGuides[0].title}
               </Link>
             </p>
           )}
