@@ -67,6 +67,24 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Ramadan & Eid retired from site navigation in favor of Holiday &
+  // Hostess Gifts (the collection stays live in Shopify — see
+  // lib/shopify/client.ts RETIRED_COLLECTION_HANDLES). These send old
+  // bookmarks/search results somewhere live instead of 404ing.
+  async redirects() {
+    return [
+      {
+        source: "/collections/ramadan-eid",
+        destination: "/collections/holiday-hostess-gifts",
+        permanent: true,
+      },
+      {
+        source: "/guides/ramadan-table-decor-ideas",
+        destination: "/collections/holiday-hostess-gifts",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -23,66 +23,6 @@ import type { ContentRecord } from "./types";
  */
 export const contentRecords: ContentRecord[] = [
   {
-    slug: "ramadan-table-decor-ideas",
-    contentType: "guide",
-    status: "published",
-    title: "Ramadan Table Decor Ideas for Iftar and Eid Gatherings",
-    metaTitle: "Ramadan Table Decor Ideas — Iftar & Eid Styling Guide",
-    metaDescription:
-      "Practical Ramadan table decor ideas — from a mirrored centerpiece to a bakhoor burner for ambience — for iftar and Eid gatherings of any size.",
-    collectionKey: "ramadan-eid",
-    relatedProductHandles: [
-      "hand-hammered-silver-casserole",
-      "hammered-gold-casserole",
-      "mirror-rectangular-tray-set",
-      "two-tier-crystal-blossom-stand",
-      "rectangular-mirror-cake-stand",
-      "crystal-blossom-vanity-set",
-      "hand-pierced-silver-bakhoor-burner",
-      "taupe-calligraphy-bakhoor-dome",
-      "calligraphy-nesting-bowls-set",
-    ],
-    primaryKeyword: "ramadan table decor",
-    secondaryKeywords: [
-      "ramadan decor ideas",
-      "eid table setting",
-      "iftar table decor",
-      "bakhoor burner for ramadan",
-      "ma'amoul presentation box",
-    ],
-    searchIntent: "seasonal",
-    owningUrl: "/guides/ramadan-table-decor-ideas",
-    intro:
-      "A good iftar table does two things at once: it feeds a full house without chaos, and it makes the breaking of the fast feel like the occasion it is. None of that requires a full redecoration — a handful of considered serving pieces, layered with height and reflection, does most of the work. Here's how we'd build one.",
-    sections: [
-      {
-        heading: "Start with a reflective centerpiece",
-        body: "Mirror-polished serving pieces catch candlelight and lamplight in a way matte finishes can't, which is most of why they read as festive without any extra styling. A pair of mirror rectangular trays down the center of the table — one for dates and nuts, one for tea glasses — does this cheaply and resets between courses in seconds.",
-      },
-      {
-        heading: "Serve the main dishes properly, not just quickly",
-        body: "The casserole that goes from stovetop to table matters more during Ramadan than any other time of year, since it's usually doing that trip more than once a night. A hand-hammered casserole with a domed lid keeps rice and stews warm through a long table conversation, and looks intentional next to the rest of the spread — the gold-plated finish especially, for the nights guests are coming.",
-      },
-      {
-        heading: "Layer height for dates and dessert",
-        body: "A flat table reads as a meal; a table with height reads as a gathering. A two-tier dessert stand does the obvious job of holding more sweets in the same footprint, but it's also just easier to reach across a crowded table than a single low platter. A rectangular mirror cake stand does similar work for a single showpiece, and a set of pierced calligraphy nesting bowls covers the nuts and dates in between.",
-      },
-      {
-        heading: "Present the sweets, don't just serve them",
-        body: "Ma'amoul deserves better than a plain plate. A hammered dome — pierced in calligraphy, lifted away at the table — turns the reveal into part of the occasion instead of hiding it in the kitchen. We keep one in polished silver for a formal table and one in matte taupe for everyday use; both use the same laser-cut detailing and open the same way.",
-      },
-      {
-        heading: "Bring in scent, not just sight",
-        body: "Bakhoor and oud are as much a part of an iftar or Eid gathering as the food is. Our crystal blossom stemmed dish, part of the vanity set, doubles as a burner — the open bowl lets the smoke move freely, and the matching lidded jar keeps bakhoor within reach without cluttering the table.",
-      },
-      {
-        heading: "Building the table piece by piece",
-        body: "None of this needs to happen at once. Most tables we've seen built well started with one or two pieces — usually the serving trays or the casserole — and added a stand, a sweets box, or a burner the following Ramadan. Treat the table as something you're building over a few seasons, not shopping for in one trip.",
-      },
-    ],
-    publishedAt: "2026-07-20",
-  },
-  {
     slug: "silver-vs-gold-hammered-casserole",
     contentType: "guide",
     status: "published",
@@ -458,10 +398,10 @@ export const contentRecords: ContentRecord[] = [
     slug: "decorative-dome-styling-ideas",
     contentType: "guide",
     status: "published",
-    title: "Decorative Dome Covers: Styling Ideas Beyond Ramadan",
+    title: "Decorative Dome Covers: Styling Ideas Beyond the Holidays",
     metaTitle: "Decorative Dome Cover Styling Ideas for Any Season",
     metaDescription:
-      "A covered dome dish isn't only for Ramadan. Styling ideas for using a crescent dome as everyday home decor, plus pierced vs. solid lid compared.",
+      "A covered dome dish isn't only for the holidays. Styling ideas for using a crescent dome as everyday home decor, plus pierced vs. solid lid compared.",
     collectionKey: "home-decor",
     relatedProductHandles: [
       "cream-metal-crescent-dome-pierced-lid",
@@ -476,7 +416,7 @@ export const contentRecords: ContentRecord[] = [
     searchIntent: "use-case",
     owningUrl: "/guides/decorative-dome-styling-ideas",
     intro:
-      "A domed cover tends to come out for Ramadan and go back in the cabinet the rest of the year, which undersells it — a covered dish is a genuinely useful piece of decor in any season, for reasons that have nothing to do with what's under the lid.",
+      "A domed cover tends to come out for the holidays and go back in the cabinet the rest of the year, which undersells it — a covered dish is a genuinely useful piece of decor in any season, for reasons that have nothing to do with what's under the lid.",
     sections: [
       {
         heading: "Pierced vs. solid lid — which to pick",
@@ -492,7 +432,7 @@ export const contentRecords: ContentRecord[] = [
       },
       {
         heading: "Pairing it with the rest of a room",
-        body: "The cream base and gold-toned crescent finial pair naturally with warm metals and neutral palettes already in a room — it doesn't need to match other Ramadan-specific pieces to look intentional sitting on a shelf in July.",
+        body: "The cream base and gold-toned crescent finial pair naturally with warm metals and neutral palettes already in a room — it doesn't need to match other holiday-specific pieces to look intentional sitting on a shelf in July.",
       },
     ],
     publishedAt: "2026-10-21",
@@ -549,15 +489,15 @@ export const contentRecords: ContentRecord[] = [
     slug: "how-to-style-an-embroidered-cape",
     contentType: "guide",
     status: "published",
-    title: "How to Style an Embroidered Cape for Eid or a Wedding",
-    metaTitle: "How to Style an Embroidered Cape — Eid & Wedding Outfits",
+    title: "How to Style an Embroidered Cape for the Holidays or a Wedding",
+    metaTitle: "How to Style an Embroidered Cape — Holiday & Wedding Outfits",
     metaDescription:
-      "How to style our Arabic calligraphy embroidered cape for Eid, a wedding, or any dressed-up occasion — what to wear underneath and how to accessorize.",
+      "How to style our Arabic calligraphy embroidered cape for the holidays, a wedding, or any dressed-up occasion — what to wear underneath and how to accessorize.",
     collectionKey: "apparel",
     relatedProductHandles: ["arabic-calligraphy-embroidered-cape"],
     primaryKeyword: "how to style an embroidered cape",
     secondaryKeywords: [
-      "eid outfit cape",
+      "holiday outfit cape",
       "calligraphy cape styling",
       "what to wear an embroidered cape with",
     ],
@@ -571,8 +511,8 @@ export const contentRecords: ContentRecord[] = [
         body: "Keep what's underneath simple — a solid-color dress, a tunic and trousers, or a simple abaya all work, since the raised gold embroidery down the front is already the focal point. The cord tie lets you wear it open and loose over an outfit or cinched at the waist for more shape; both read as intentional rather than one being more \"correct\" than the other.",
       },
       {
-        heading: "For Eid",
-        body: "Ivory and Terracotta both read as daytime-appropriate for an Eid morning or brunch gathering, while Burgundy carries more weight for an evening family gathering or Eid dinner. The embroidery already does the festive work, so there's no need to layer on additional statement pieces underneath.",
+        heading: "For the holidays",
+        body: "Ivory and Terracotta both read as daytime-appropriate for a holiday morning or brunch gathering, while Burgundy carries more weight for an evening family gathering or holiday dinner. The embroidery already does the festive work, so there's no need to layer on additional statement pieces underneath.",
       },
       {
         heading: "For a wedding",
@@ -616,7 +556,7 @@ export const contentRecords: ContentRecord[] = [
       },
       {
         heading: "Burgundy — the most formal",
-        body: "Burgundy carries the most visual weight of the four and suits evening events — a wedding reception, an Eid dinner, anywhere the gathering skews more formal. It's also the color that reads richest in photos taken under warm, low light.",
+        body: "Burgundy carries the most visual weight of the four and suits evening events — a wedding reception, a holiday dinner, anywhere the gathering skews more formal. It's also the color that reads richest in photos taken under warm, low light.",
       },
       {
         heading: "Terracotta — a warm neutral that works both ways",

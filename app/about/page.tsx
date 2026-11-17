@@ -14,12 +14,12 @@ export default function AboutPage() {
         Exception by K&amp;I makes cookware, kitchen accessories, and home décor built to be kept
         — not replaced. We favor honest materials (cast iron, brass, copper, stainless steel)
         and construction that holds up to daily use, from a weeknight skillet to the pieces that
-        come out for Ramadan and Eid.
+        come out for holiday hosting.
       </p>
       <h2>What we make</h2>
       <p>
         Our catalog spans everyday cookware, the small accessories that finish a kitchen, home
-        décor for the rooms beyond it, seasonal Ramadan &amp; Eid pieces, and curated gift sets —
+        décor for the rooms beyond it, Holiday &amp; Hostess Gifts, and curated gift sets —
         with new categories added as the collection grows.
       </p>
       <h2>How we&apos;re built</h2>

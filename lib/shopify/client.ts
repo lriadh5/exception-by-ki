@@ -40,16 +40,29 @@ function warnOnceAboutSampleData() {
   );
 }
 
+/**
+ * Collections kept in Shopify (not deleted) but retired from the site's
+ * navigation and listings — e.g. a past-season collection replaced by a
+ * new one. Filtered out everywhere listCollections() is used (homepage
+ * grid, sitemap, keyword-ownership registry, collection static params) so
+ * there's one place to retire a collection from the live site without
+ * touching Shopify. Its own URL still resolves — see the redirect in
+ * next.config.ts — so old links land somewhere live instead of 404ing.
+ */
+const RETIRED_COLLECTION_HANDLES = new Set(["ramadan-eid"]);
+
 export async function listCollections(): Promise<Collection[]> {
   if (IS_PREVIEW_MODE) {
     warnOnceAboutSampleData();
-    return getAllCollections();
+    return getAllCollections().filter((c) => !RETIRED_COLLECTION_HANDLES.has(c.handle));
   }
   const data = await shopifyFetch<{ collections: ShopifyEdge<ShopifyCollectionNode> }>(
     COLLECTIONS_QUERY,
     { first: 25 }
   );
-  return data.collections.edges.map((e) => mapShopifyCollection(e.node));
+  return data.collections.edges
+    .map((e) => mapShopifyCollection(e.node))
+    .filter((c) => !RETIRED_COLLECTION_HANDLES.has(c.handle));
 }
 
 export async function getCollection(handle: string): Promise<Collection | undefined> {
