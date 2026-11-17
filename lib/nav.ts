@@ -7,7 +7,7 @@ export const primaryNav = [
   { title: "Olive Wood", href: "/collections/olive-wood" },
   { title: "Serveware & Trays", href: "/collections/serveware-trays" },
   { title: "Home Décor", href: "/collections/home-decor" },
-  { title: "Ramadan & Eid", href: "/collections/ramadan-eid" },
+  { title: "Holiday & Hostess Gifts", href: "/collections/holiday-hostess-gifts" },
   { title: "Pillows & Textiles", href: "/collections/pillows-textiles" },
   { title: "Gifts & Games", href: "/collections/gifts-games" },
   { title: "Apparel", href: "/collections/apparel" },

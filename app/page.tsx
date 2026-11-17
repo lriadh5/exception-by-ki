@@ -23,8 +23,8 @@ export default async function HomePage() {
           </h1>
           <p className="mt-6 text-paper/70 max-w-xl mx-auto">
             Considered materials, honest craftsmanship, and a catalog that
-            grows with your table — from everyday cookware to Ramadan &amp;
-            Eid gifting.
+            grows with your table — from everyday cookware to holiday and
+            hostess gifting.
           </p>
           <Link
             href="/collections/cookware"
