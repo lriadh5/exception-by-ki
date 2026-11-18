@@ -15,31 +15,28 @@ export default function PrivacyPolicyPage() {
           This is placeholder policy text and is not a substitute for legal advice.
         </strong>{" "}
         Have counsel review and finalize this page — including GDPR/CCPA obligations for your
-        actual regions of operation — before this site collects real customer data.
+        actual regions of operation — as soon as possible, since this site now collects real
+        customer data.
       </p>
-      <h2>What we collect today</h2>
+      <h2>What we collect</h2>
       <p>
-        In this preview build: nothing. There is no checkout, no account system, and no contact
-        form connected to a backend, so no personal data is transmitted to us through this site
-        yet. A cart and wishlist are stored only in your browser&apos;s local storage and never
-        leave your device.
+        When you place an order, we and our processors collect your name, email address, shipping
+        and billing address, and payment information needed to fulfill it. Checkout and payment
+        processing are handled by Shopify and its payment processor; we don&apos;t store your
+        payment card details ourselves. If you email us, we receive whatever you send in that
+        message. A cart and wishlist are also stored in your browser&apos;s local storage and
+        never leave your device unless you check out.
       </p>
       <h2>Cookies &amp; analytics</h2>
       <p>
-        We ask for consent before enabling any analytics (see the cookie banner). No analytics
-        provider is connected yet — see README &ldquo;Prepared, not built.&rdquo;
-      </p>
-      <h2>What we&apos;ll collect once live</h2>
-      <p>
-        Once checkout is connected, this section will disclose exactly what&apos;s collected
-        (contact/shipping details, order history) and how it&apos;s used, shared with processors
-        (Shopify, payment providers, shipping carriers), and retained.
+        We ask for consent before enabling any analytics or marketing cookies (see the cookie
+        banner), and only enable the services you consent to.
       </p>
       <h2>Your rights</h2>
       <p>
         Depending on your location, you may have rights to access, correct, or delete your data.
-        Contact details for exercising these rights will be added once the Contact Us page is
-        connected.
+        Contact us at <a href="mailto:exceptionbyki@gmail.com">exceptionbyki@gmail.com</a> to
+        exercise these rights.
       </p>
     </LegalPage>
   );

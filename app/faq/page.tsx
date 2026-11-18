@@ -9,16 +9,12 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: "Is the store live yet?",
-    a: "Not yet — you're viewing a preview build on sample catalog data. A banner at the top of the site says so whenever it applies. Checkout is disabled until a real store is connected.",
-  },
-  {
     q: "What materials do you use?",
     a: "Cast iron, stainless steel, brass, and copper are the core materials across the collection — see each product's Material field for specifics.",
   },
   {
     q: "Do you ship internationally?",
-    a: "Shipping regions and rates will be finalized once the store is connected — see the Shipping Policy page for what's confirmed so far.",
+    a: "We currently ship within the United States only. Rates are calculated by weight and destination at checkout — see the Shipping Policy page for details.",
   },
   {
     q: "What's your return policy?",
