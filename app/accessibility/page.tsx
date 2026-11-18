@@ -23,13 +23,13 @@ export default function AccessibilityPage() {
       </ul>
       <h2>Known gaps</h2>
       <p>
-        This is a preview build — product photography, once added, will need alt text audited,
-        and a full manual screen reader pass (VoiceOver/NVDA) is still pending before launch.
+        A full manual screen reader pass (VoiceOver/NVDA) across the live catalog is still
+        pending, and product photo alt text is reviewed on an ongoing basis as new products are
+        added.
       </p>
       <h2>Reporting an issue</h2>
       <p>
-        If you encounter an accessibility barrier, please let us know via the Contact Us page once
-        it&apos;s connected.
+        If you encounter an accessibility barrier, please let us know via the Contact Us page.
       </p>
     </LegalPage>
   );
