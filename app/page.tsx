@@ -13,6 +13,23 @@ export default async function HomePage() {
 
   return (
     <div>
+      {/* Black Friday promo — temporary, remove this section once the sale ends */}
+      <section className="bg-paper-dim border-b border-line">
+        <div className="mx-auto max-w-3xl px-6 py-16 md:py-20 text-center">
+          <p className="text-brand-dark text-xs tracking-[0.3em] uppercase mb-3">
+            Black Friday Sale
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl text-ink mb-3">Enjoy 15% Off</h2>
+          <p className="text-ink-soft mb-8">Discover something exceptional.</p>
+          <Link
+            href="/shop-all"
+            className="inline-block bg-brand-dark text-paper px-8 py-3 text-sm tracking-wide transition-all duration-300 hover:bg-brand hover:shadow-lg hover:-translate-y-0.5"
+          >
+            Shop Now
+          </Link>
+        </div>
+      </section>
+
       <section className="hero-brand-gradient text-paper">
         <div className="mx-auto max-w-7xl px-6 py-28 md:py-36 text-center">
           <p className="text-brand-light text-xs tracking-[0.3em] uppercase mb-4">
