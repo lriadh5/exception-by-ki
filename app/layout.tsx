@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/layout/CartDrawer";
 import { PreviewBanner } from "@/components/layout/PreviewBanner";
+import { SaleAnnouncementBar } from "@/components/layout/SaleAnnouncementBar";
 import { CartProvider } from "@/lib/cart/cart-context";
 import { WishlistProvider } from "@/lib/wishlist/wishlist-context";
 import { RecentlyViewedProvider } from "@/lib/recently-viewed/recently-viewed-context";
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <WishlistProvider>
               <RecentlyViewedProvider>
                 {IS_PREVIEW_MODE && <PreviewBanner />}
+                <SaleAnnouncementBar />
                 <a
                   href="#main-content"
                   className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-ink focus:text-paper focus:px-4 focus:py-2"
