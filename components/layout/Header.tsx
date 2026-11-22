@@ -24,7 +24,11 @@ export function Header() {
             ☰
           </button>
 
-          <Link href="/" aria-label="Exception by K&amp;I — home" className="shrink-0">
+          <Link
+            href="/"
+            aria-label="Exception by K&amp;I — home"
+            className="shrink-0 flex flex-col items-center"
+          >
             <Image
               src="/logo.png"
               alt="Exception by K&amp;I"
@@ -33,6 +37,9 @@ export function Header() {
               priority
               className="h-11 w-auto md:h-13"
             />
+            <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-brand-dark font-medium">
+              USA
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 min-w-0" aria-label="Primary">
