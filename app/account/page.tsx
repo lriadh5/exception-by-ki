@@ -18,8 +18,7 @@ export default function AccountPage() {
     <div className="mx-auto max-w-xl px-6 py-24 text-center">
       <h1 className="font-serif text-3xl mb-4">Accounts aren&apos;t available yet</h1>
       <p className="text-ink-soft mb-4">
-        Sign-in and order history will be available once a Shopify store is connected. In the
-        meantime:
+        We don&apos;t have customer accounts yet. In the meantime:
       </p>
       <ul className="text-ink-soft text-sm mb-8 space-y-1">
         <li>

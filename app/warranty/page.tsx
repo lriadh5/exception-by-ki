@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 
 export default function WarrantyPage() {
   return (
-    <LegalPage title="Warranty" updated="Draft — pending launch">
-      <p>
-        <strong className="text-ink">This is placeholder policy text</strong> — confirm actual
-        coverage terms with your manufacturers/suppliers before launch.
-      </p>
+    <LegalPage title="Warranty" updated="November 26, 2026">
       <h2>Coverage</h2>
       <p>
         Cookware is intended to be built to last. Manufacturing defects are covered for a limited
@@ -23,7 +19,11 @@ export default function WarrantyPage() {
       <h2>What&apos;s not covered</h2>
       <p>Damage from misuse, improper care (see Care Guides), or use outside the product&apos;s intended purpose.</p>
       <h2>Making a claim</h2>
-      <p>A warranty claims process will be added here once a support channel is connected — see Contact Us.</p>
+      <p>
+        Email <a href="mailto:exceptionbyki@gmail.com">exceptionbyki@gmail.com</a> or call{" "}
+        <a href="tel:+17038396354">(703) 839-6354</a> with your order number and a description (or
+        photo) of the issue, and we&apos;ll help from there.
+      </p>
     </LegalPage>
   );
 }

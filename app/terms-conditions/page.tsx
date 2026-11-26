@@ -9,12 +9,10 @@ export const metadata: Metadata = {
 
 export default function TermsConditionsPage() {
   return (
-    <LegalPage title="Terms & Conditions" updated="Draft — pending legal review">
+    <LegalPage title="Terms & Conditions" updated="November 26, 2026">
       <p>
-        <strong className="text-ink">
-          This is placeholder terms text and is not a substitute for legal advice.
-        </strong>{" "}
-        Have counsel review and finalize this page before launch.
+        This page is provided for informational purposes and is not a substitute for legal advice.
+        We review it periodically with counsel.
       </p>
       <h2>Use of this site</h2>
       <p>
@@ -27,7 +25,10 @@ export default function TermsConditionsPage() {
         otherwise noted.
       </p>
       <h2>Limitation of liability</h2>
-      <p>Finalize with counsel — this section needs jurisdiction-specific language.</p>
+      <p>
+        Exception by K&amp;I LLC is not liable for indirect, incidental, or consequential damages
+        arising from use of this site, to the fullest extent permitted by law.
+      </p>
     </LegalPage>
   );
 }

@@ -9,23 +9,34 @@ export const metadata: Metadata = {
 
 export default function ShippingPolicyPage() {
   return (
-    <LegalPage title="Shipping Policy" updated="Draft — pending launch">
-      <p>
-        <strong className="text-ink">This is placeholder policy text</strong> for a store still in
-        preview mode. Review and finalize with your fulfillment provider and legal counsel before
-        launch — actual rates, carriers, and timelines depend on how Shopify Shipping (or a
-        third-party fulfillment service) is configured.
-      </p>
+    <LegalPage title="Shipping Policy" updated="November 26, 2026">
+      <p>We ship within the United States only.</p>
       <h2>Processing time</h2>
-      <p>Orders are typically processed within 1–3 business days once the store is live.</p>
-      <h2>Shipping rates &amp; timelines</h2>
+      <p>Orders are processed in 1 to 3 business days.</p>
+      <h2>Standard shipping</h2>
+      <p>3 to 7 business days, by order weight:</p>
+      <ul>
+        <li>
+          Most states — under 2 lb: $6; 2 to 4.99 lb: $9; 5 to 9.99 lb: $14; 10 lb and over: $22.
+        </li>
+        <li>
+          CA, OR, WA, NV, AK, HI, U.S. territories, and military addresses — under 2 lb: $9; 2 to
+          4.99 lb: $13; 5 to 9.99 lb: $19; 10 lb and over: $29.
+        </li>
+      </ul>
+      <p>Free standard shipping on orders of $70 or more.</p>
+      <h2>Express shipping</h2>
       <p>
-        Calculated at checkout based on destination and order weight once Shopify Shipping is
-        connected. Domestic delivery is expected to take 3–7 business days; international
-        timelines and available regions will be confirmed at launch.
+        2 to 4 business days: $15, or $22 to CA, OR, WA, NV, AK, HI, U.S. territories, and military
+        addresses.
       </p>
       <h2>Order tracking</h2>
-      <p>A tracking link will be emailed once an order ships and a fulfillment provider is connected.</p>
+      <p>Tracking is emailed when your order ships.</p>
+      <h2>Questions</h2>
+      <p>
+        Call <a href="tel:+17038396354">(703) 839-6354</a> or email{" "}
+        <a href="mailto:exceptionbyki@gmail.com">exceptionbyki@gmail.com</a>.
+      </p>
     </LegalPage>
   );
 }
