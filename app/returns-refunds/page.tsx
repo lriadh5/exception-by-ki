@@ -9,26 +9,27 @@ export const metadata: Metadata = {
 
 export default function ReturnsRefundsPage() {
   return (
-    <LegalPage title="Returns & Refunds" updated="Draft — pending launch">
-      <p>
-        <strong className="text-ink">This is placeholder policy text</strong> — finalize with
-        legal counsel before launch, and confirm it matches how returns are actually configured
-        in Shopify.
-      </p>
+    <LegalPage title="Returns & Refunds" updated="November 26, 2026">
       <h2>Return window</h2>
+      <p>Returns are accepted within 30 days of delivery, unused and in original packaging.</p>
+      <h2>Return shipping</h2>
       <p>
-        Unused items in original packaging may be returned within 30 days of delivery for a full
-        refund to the original payment method.
-      </p>
-      <h2>Non-returnable items</h2>
-      <p>Gift cards and final-sale items (marked as such at purchase) are not eligible for return.</p>
-      <h2>How to start a return</h2>
-      <p>
-        A self-serve returns flow will be linked here once the store is connected. Until then,
-        see the Contact Us page.
+        Customers pay return shipping, unless the item arrived damaged or wrong, in which case we
+        cover it.
       </p>
       <h2>Refund timing</h2>
-      <p>Refunds are issued within 5–10 business days of the returned item being received.</p>
+      <p>
+        Refunds go to the original payment method within 5 to 10 business days after we receive
+        the return.
+      </p>
+      <h2>Non-returnable items</h2>
+      <p>Gift cards and final-sale items can&apos;t be returned.</p>
+      <h2>How to start a return</h2>
+      <p>
+        Email <a href="mailto:exceptionbyki@gmail.com">exceptionbyki@gmail.com</a> or call{" "}
+        <a href="tel:+17038396354">(703) 839-6354</a> with your order number.
+      </p>
+      <p>Return address: 8684 Belgrove Gardens Lane, Gainesville, VA 20155.</p>
     </LegalPage>
   );
 }

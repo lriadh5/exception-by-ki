@@ -32,6 +32,20 @@ export function Footer() {
               Considered cookware, kitchen accessories, and home décor for
               everyday tables and the occasions that matter.
             </p>
+            <address className="not-italic text-sm text-ink-soft space-y-1 mt-4">
+              <p>Exception by K&amp;I LLC</p>
+              <p>8684 Belgrove Gardens Lane, Gainesville, VA 20155</p>
+              <p>
+                <a href="tel:+17038396354" className="hover:text-ink">
+                  (703) 839-6354
+                </a>
+              </p>
+              <p>
+                <a href="mailto:exceptionbyki@gmail.com" className="hover:text-ink">
+                  exceptionbyki@gmail.com
+                </a>
+              </p>
+            </address>
           </div>
           <NewsletterForm />
         </div>

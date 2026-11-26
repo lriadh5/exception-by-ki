@@ -22,12 +22,8 @@ export default function AboutPage() {
         décor for the rooms beyond it, Holiday &amp; Hostess Gifts, and curated gift sets —
         with new categories added as the collection grows.
       </p>
-      <h2>How we&apos;re built</h2>
-      <p>
-        This site is currently running in preview mode on sample data while the storefront is
-        under construction — see the banner at the top of the page. Full company history,
-        sourcing details, and team information will be added here as the brand comes online.
-      </p>
+      <h2>Company details</h2>
+      <p>Exception by K&amp;I is operated by Exception by K&amp;I LLC, Gainesville, VA.</p>
     </LegalPage>
   );
 }

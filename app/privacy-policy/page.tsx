@@ -9,14 +9,11 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPage title="Privacy Policy" updated="Draft — pending legal review">
+    <LegalPage title="Privacy Policy" updated="November 26, 2026">
       <p>
-        <strong className="text-ink">
-          This is placeholder policy text and is not a substitute for legal advice.
-        </strong>{" "}
-        Have counsel review and finalize this page — including GDPR/CCPA obligations for your
-        actual regions of operation — as soon as possible, since this site now collects real
-        customer data.
+        This policy is provided for informational purposes and is not a substitute for legal
+        advice. We review it periodically with counsel, including for GDPR/CCPA obligations across
+        our regions of operation.
       </p>
       <h2>What we collect</h2>
       <p>
